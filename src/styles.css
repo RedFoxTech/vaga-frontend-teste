@@ -1,0 +1,7 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+    background-image: url('/assets/degrade.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
