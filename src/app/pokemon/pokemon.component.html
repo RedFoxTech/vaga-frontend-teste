@@ -1,0 +1,50 @@
+<div class="container">
+    <table class="table table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" style="width:80px">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Pokémon</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="pokemon" style="background-color:#cedce9">
+                <th scope="row">{{pokemon.id}}</th>
+                <td>{{pokemon.name}}</td>
+                <td class="poke-image">
+                    <img [src]="pokemon.sprites.front_default" (click)="open(content)">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--Poke-modal-->
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Poké-Card</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="card">
+            <img class="card-img-top rounded mx-auto d-block" [src]="pokemon.sprites.front_default" alt="poke-card">
+            <div class="card-body">
+                <h5 class="card-title">{{pokemon.name}}</h5>
+                <ul style="list-style-type:none">
+                    <li>Número: {{pokemon.id}}</li>
+                    <ul *ngFor="let attribute of pokemon.types">
+                        <li>Tipo: {{attribute.type.name}}</li>
+                    </ul>
+                    <ul *ngFor="let abilities of pokemon.abilities">
+                        <li>Habilidade: {{abilities.ability.name}}</li>
+                    </ul>
+                </ul>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

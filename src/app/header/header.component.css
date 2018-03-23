@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.jumbotron {
+    background-color: #4a377c;
+    margin-bottom: 0px; 
+    padding: 24px;
+}
+
+.display-4 {
+    color: white;
+    padding: 26px;
+    font-weight: 500;
+}
+
+.poke-style {
+    width: 130px;
+    height: 130px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bulbasaur {
+    background-image:url('/assets/bulbasaur.png');
+}
+
+.squirtle {
+    background-image:url('/assets/squirtle.png');
+}
+
+.charmander {
+    background-image:url('/assets/charmander.png');
+}
+
+.pikachu_cap {
+    background-image:url('/assets/pikachu_cap.png');
+}
+

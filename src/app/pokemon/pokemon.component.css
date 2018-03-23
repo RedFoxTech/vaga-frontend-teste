@@ -1,0 +1,25 @@
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+}
+
+.poke-image {
+    text-align: center;
+    padding: 0;
+}
+
+img {
+    cursor: pointer;
+}
+
+.card-img-top {
+    width: 200px;
+}
+
+ul {
+    list-style-type:none;
+}
+
+.modal-header {
+    background-color: #c5c5de;
+}

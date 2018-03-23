@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="navbar" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2"
+             type="text"
+             placeholder="Pokémon"
+             aria-label="Search"
+             name="search"
+            [(ngModel)]="searchStr">
+      <button class="btn btn-outline-info mr-sm-2" type="button" disabled (click)="listPokemon()">Listar Pokémons</button>
+      <button class="btn btn-outline-info mr-sm-2" type="button" (click)="searchPokemon()">Buscar Pokémon</button>
+    </form>
+  </div>
+</nav>
