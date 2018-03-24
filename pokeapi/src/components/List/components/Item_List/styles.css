@@ -1,0 +1,14 @@
+.item {
+  display: flex;
+  flex: 1;
+  flex-direction: 'row';
+  align-self: 'center';
+  padding: 15px;
+  margin: 10px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+a:hover {
+  background: #333,
+}
