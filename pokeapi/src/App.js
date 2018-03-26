@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 
 import Header from './components/Header';
 import Search from './components/Search';
-import List from './components/List';
 
 class App extends Component {
   render() {
     return (
-      <div class="container">
+      <div class="containerA">
         <Header />
-        <Search />
-        <List />
+        <div class="container">
+          <Search />
+        </div>
       </div>
     );
   }

@@ -19,7 +19,6 @@ class Modal extends Component {
           <div class="foto">
             <img
               style={{ marginRight: 10}}
-              //src={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'}
               src={this.props.foto}
             />
           </div>

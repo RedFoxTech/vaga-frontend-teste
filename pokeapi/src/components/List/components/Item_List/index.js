@@ -6,12 +6,13 @@ import Modal from './components/Modal';
 
 
 class Item_List extends Component {
-  constructor() {
+  constructor(props) {
     super();
     
     this.state = {
       show: false,
       pokemonInfo: [],
+      ...props.urlPokemon,
     }
   }
 
@@ -30,7 +31,6 @@ class Item_List extends Component {
     fetch(`${url}`)
       .then(data => data.json())
       .then((data) => {
-        console.log(data);
         this.setState({ pokemonInfo: data })
         console.log(this.state.pokemonInfo)
       });
@@ -45,28 +45,20 @@ class Item_List extends Component {
       <div class="containera">
         <div class="item">
           <a onClick={this.abrirModal.bind(this)} href="#" class="button">
-            <img
-              style={{ marginRight: 10}}
-              src={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'}
-            />
-            <span style={{fontSize: 20}}>{this.props.namePokemon}</span>
+            <span style={{fontSize: 20}}>{this.props.name}</span>
           </a>
         </div>
         {
           this.state.show 
           &&
-          // this.state.pokemonInfo.map(function(pokemon, index) {
-            // return (
-              <Modal 
-                fechar={this.fecharModal.bind(this)} 
-                nome={this.state.pokemonInfo.name}
-                peso={this.state.pokemonInfo.weight}
-                tipo={this.state.pokemonInfo.types[0].type.name}
-                habilidade={this.state.pokemonInfo.abilities[0].ability.name}
-                foto={this.state.pokemonInfo.sprites.front_default}
-              />
-            // )
-          // })
+          <Modal 
+            fechar={this.fecharModal.bind(this)} 
+            nome={this.state.pokemonInfo.name}
+            peso={this.state.pokemonInfo.weight}
+            tipo={this.state.pokemonInfo.types[0].type.name}
+            habilidade={this.state.pokemonInfo.abilities[0].ability.name}
+            foto={this.state.pokemonInfo.sprites.front_default}
+          />
         }
       </div>
     );
