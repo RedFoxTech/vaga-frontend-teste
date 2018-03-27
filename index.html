@@ -1,0 +1,118 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+  <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css'>
+</head>
+
+<body ng-controller="myCtrl" ng-cloak>
+  <br>
+  <md-content layout="column" layout-align="center center" layout-padding layout-wrap>
+    <h1 class="md-display-2">Pokemon!</h1>
+    <p  class="md-headline" ng-show="pokemon.count">{{(query.length > 0)?filtered.length:pokemon.count}} pokemon(s) encontrados</p>
+  </md-content>
+  <md-content layout="row" layout-align="center center" layout-padding layout-wrap>
+    <md-input-container flex="60">
+      <label> Pesquisar por Nome:</label>
+      <input type="text" class="hide-validation-errors" ng-model="query">
+    </md-input-container>
+    <md-input-container flex="20">
+      <label>Filtrar por tipo:</label>
+      <md-select ng-model="typeSelected" ng-change="fnTypeSelected()">
+        <md-option ng-repeat="t in type.results | orderBy: name" value="{{t.url}}">{{t.name | capitalize}}</md-option>
+      </md-select>
+      <div class="md-errors-spacer"></div>
+    </md-input-container>
+  </md-content>
+
+  <md-content>
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-radio-group layout="row" ng-model="order">
+        <md-radio-button value="name"> Alfabética </md-radio-button>
+        <md-radio-button value="id">ID</md-radio-button>
+      </md-radio-group>
+    </section>
+  </md-content>
+
+  <div class='md-padding' layout-align="center center" layout="row" layout-wrap>
+    <md-card flex="20" layout="row" ng-repeat="t in pokemon.results  | filter: query | orderBy: order | limitTo:limitOffset:begin as filtered"
+      ng-click="showPrerenderedDialog($event,t.url)">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{t.name | capitalize}}</span>
+          <span class="md-subhead">{{t.id}}</span>
+        </md-card-title-text>
+        <md-card-title-media>
+          <div class="md-media-sm card-media">
+            <img ng-src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{t.id}}.png" class="md-card-image"
+              alt="{{t.name}}">
+          </div>
+        </md-card-title-media>
+      </md-card-title>
+    </md-card>
+  </div>
+  <md-content>
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button ng-click="previous()">Anterior</md-button>
+      <md-input-container>
+        <md-select ng-model="limitOffset" aria-label="limitOffset">
+          <md-option ng-value="20">20</md-option>
+          <md-option ng-value="60">60</md-option>
+          <md-option ng-value="100">100</md-option>
+          <md-option ng-value="200">200</md-option>
+          <md-option ng-value="{{pokemon.count}}">
+            <em>Todos</em>
+          </md-option>
+        </md-select>
+      </md-input-container>
+      <md-button ng-click="next()">Próximo</md-button>
+    </section>
+  </md-content>
+
+  <div style="visibility: hidden">
+    <div class="md-dialog-container" id="myDialog">
+      <md-dialog>
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2>{{dialog.name | capitalize}}</h2>
+          </div>
+        </md-toolbar>
+        <md-dialog-contentl layout-padding>
+          <div layout="row" layout-align="center center">
+            <img ng-src="{{dialog.sprites.front_default}}" class="md-icon" alt="">
+          </div>
+          <p>
+            Tipo: {{dialog.types[0].type.name | capitalize}}
+          </p>
+          <p>
+            Habilidade: {{dialog.abilities[0].ability.name | capitalize}}
+          </p>
+          <p>
+            Altura: {{dialog.height}}
+          </p>
+          <p>
+            Peso: {{dialog.weight}}
+          </p>
+          </md-dialog-content>
+      </md-dialog>
+    </div>
+  </div>
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+
+  <!-- Loading Bar -->
+  <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+
+  <script src="./script.js"></script>
+</body>
+</html
