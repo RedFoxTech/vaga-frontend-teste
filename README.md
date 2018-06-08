@@ -1,5 +1,6 @@
 # Teste de Frontend
 
+cinthia Queiroz
 Olá Dev!  Tudo bem?
 
 Nós estamos sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente bom senso!
