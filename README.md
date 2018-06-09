@@ -1,7 +1,7 @@
 # Teste de Frontend
 
 Olá Dev!  Tudo bem?
-
+cinthi
 Nós estamos sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente bom senso!
 
 Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas reconhecer seu esforço e potencial para aprender, se adaptar e tomar decisões.
