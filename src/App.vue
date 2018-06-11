@@ -1,8 +1,11 @@
 <template>
   <div id="app">
     <b-jumbotron class="cabecalho">
-       <b-row class="justify-content-md-center">
-          <h1>{{titulo}}</h1>
+        <b-row>
+          <b-col cols="5"></b-col>
+            <b-col cols="7">
+              <h1>{{titulo}}</h1>
+           </b-col>
         </b-row>
     </b-jumbotron>
     <pokemon></pokemon>
