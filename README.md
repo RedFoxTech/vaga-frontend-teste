@@ -1,7 +1,9 @@
 # vaga-frontend-teste
 
 > A Vue.js project
-
+## CORS PARA TESTAR
+adicionar a Extensões do Chorme CORS
+https://chrome.google.com/webstore/detail/cors-toggle/jioikioepegflmdnbocfhgmpmopmjkim
 ## Build Setup
 
 ``` bash
