@@ -35,6 +35,12 @@ export default {
                console.log(error);
            });*/
       },
+      next(){
+        this.imgPokemon(this.infos.next);
+      },
+      previous(){
+        this.imgPokemon(this.infos.previous);
+      },
   }
 }
 </script>

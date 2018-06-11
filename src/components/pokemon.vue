@@ -1,33 +1,28 @@
 <template>
 
-  <section class ="container ">
-        <b-row>
-            <b-col cols="6">
-            <input type ="search"  class ="form-control" v-on:input="filtro=$event.target.value"  placeholder="pesquisa por parte nome do pokemon"></input>
-              <!-- <b-input
-                  type="search" class ="filtro"
-               v-on:input="filtro=$event.target.value" placeholder="pesquisa por parte nome do pokemon"></b-input>-->
-             </b-col>
+  <section class ="container">
+        <b-row class="justify-content-md-center">
+            <b-col class="filtro" cols="7">
+              <input type ="search"  class ="form-control" v-on:input="filtro=$event.target.value"  placeholder="Pesquisa por parte do nome do pokemon"></input>
+            </b-col>
         </b-row>
-<b-row class="justify-content-md-center">
-        <b-card bg-variant="light"  class="text-center" v-for="pokemon of pokemonComFiltro" :header="pokemon.name">
-            <img-pokemon :nome="pokemon.name">
-               <!-- <li v-text="pokemon.name"></li>-->
-            </img-pokemon>
-            <info-pokemon :nome="pokemon.name">
-            </info-pokemon>
-    </b-card>   
-  </b-row>
-   </div>
-        <!-- <li v-for="pokemon in pokemons.results">
-            <img :src="pokemon.sprites" alt="lala" height="42" width="42"></li>  -->
-  
-
-     <button class="btn btn-primary" v-if="pokemons.previous" @click="previous">Previous</button>
-      <button class="btn btn-primary" v-if="pokemons.next" @click="next">Next</button>
-      
+        <b-row class="justify-content-md-center">
+            <b-card bg-variant="light"  class="text-center" v-for="pokemon of pokemonComFiltro" :header="pokemon.name">
+                <img-pokemon :nome="pokemon.name">
+                </img-pokemon>
+                <info-pokemon :nome="pokemon.name">
+                </info-pokemon>
+            </b-card>   
+        </b-row>
+      <b-row class="justify-content-md-center botao">
+        <b-col cols="6">
+          <button class="btn btn-primary botaoTrocaPA" v-if="pokemons.previous" @click="previous">Anterior</button>
+        </b-col>
+        <b-col cols="6">
+          <button class="btn btn-primary botaoTrocaP" v-if="pokemons.next" @click="next">Proximo</button>
+        </b-col>
+      </b-row>
     
-
   </section>
 
 </template>
@@ -63,6 +58,7 @@ export default {
  created(){
     this.fetchPokemons();    
     //this.imgPoke();
+    
   },
   // computed:{
     //    imagemPokemon:function(){
@@ -72,7 +68,8 @@ export default {
         //}
    // },
      methods: {
-      fetchPokemons(url = 'http://pokeapi.co/api/v2/pokemon') {
+      fetchPokemons(url = 'http://pokeapi.co/api/v2/pokemon/') {
+        
         axios.get(url)
           .then(({ data }) => this.pokemons = data); [
           ]
@@ -104,9 +101,21 @@ export default {
 
 <style lang="scss">
 .filtro{
-    width: 100%;
+    margin-bottom: 3%;
 }
-.titulo{
-    width: 100%;
+.botao{
+    margin-top: 4%;
+    margin-bottom: 3%;
 }
+.botaoTrocaP{
+  background-color: #263238;
+  border-color: #263238;
+}
+.botaoTrocaPA{
+  background-color: #263238;
+  border-color: #263238;
+  float: right;
+}
+
+
 </style>

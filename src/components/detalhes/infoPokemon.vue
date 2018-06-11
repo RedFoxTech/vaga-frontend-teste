@@ -40,7 +40,13 @@ export default {
          },
         hideModal () {
          this.$refs.myModalRef.hide()
-         }
+         },
+        next(){
+        this.infoPokemon(this.infos.next);
+      },
+      previous(){
+        this.infoPokemon(this.infos.previous);
+      },
     }
 }
  

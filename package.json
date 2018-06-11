@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap-vue": "^2.0.0-rc.11",
+    "cors": "^2.8.4",
     "resource": "^0.8.1",
     "vue": "^2.5.11",
     "vue-icons": "^2.0.0",
