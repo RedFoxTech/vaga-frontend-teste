@@ -1,9 +1,9 @@
 <template>
 
    <!-- <li class="list-group-item" v-for="info of infos.abilities" v-text="info.ability.name"></li>-->  
-      <div class="col-sm-12">
+    <b-col cols="12">
         <img  :src="infos.sprites.front_default" alt="Pokemon" height="100" width="100">
-     </div>
+     </b-col>
   
 </template>
 

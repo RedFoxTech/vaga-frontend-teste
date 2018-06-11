@@ -1,15 +1,13 @@
 <template>
 
   <section class ="container ">
-        <b-row class="justify-content-md-center">
-            <input type ="search"  class ="filtro" v-on:input="filtro=$event.target.value" placeholder="pesquisa por parte nome do pokemon">
-             <b-input-group>
-    <b-input-group-text slot="append">
-        <strong>!</strong>
-    </b-input-group-text>
-    <b-form-input></b-form-input>
-  </b-input-group>
-  <br>
+        <b-row>
+            <b-col cols="6">
+            <input type ="search"  class ="form-control" v-on:input="filtro=$event.target.value"  placeholder="pesquisa por parte nome do pokemon"></input>
+              <!-- <b-input
+                  type="search" class ="filtro"
+               v-on:input="filtro=$event.target.value" placeholder="pesquisa por parte nome do pokemon"></b-input>-->
+             </b-col>
         </b-row>
 <b-row class="justify-content-md-center">
         <b-card bg-variant="light"  class="text-center" v-for="pokemon of pokemonComFiltro" :header="pokemon.name">
@@ -18,7 +16,7 @@
             </img-pokemon>
             <info-pokemon :nome="pokemon.name">
             </info-pokemon>
-    </b-card>
+    </b-card>   
   </b-row>
    </div>
         <!-- <li v-for="pokemon in pokemons.results">
@@ -78,12 +76,7 @@ export default {
         axios.get(url)
           .then(({ data }) => this.pokemons = data); [
           ]
-      /* .then(function (data){
-        console.log(data);
-         })
-          .catch(function (error) {
-               console.log(error);
-           });*/
+     
       },
       next() {
         this.fetchPokemons(this.pokemons.next);
