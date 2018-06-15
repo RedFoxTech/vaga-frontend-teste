@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Desafio Pokemon</title>
+</head>
+<body>
+    <div id="pokedex">
+        <header>
+            <div id="banner">
+                <div class="banner-imgs-container">
+                    <img id="logo-img" src="imagens/pokemon-logo.png" alt="Pokémon Title">
+                    <img id="pokedex-img" src="imagens/pokedex.png" alt="Pokédex Image">
+                </div>
+            </div>
+            <nav id="navbar">
+                <div>
+                    <img class="type-icon" id="all-type-icon" src="imagens/type_icons/Type____.gif" alt="???">
+                    <img class="type-icon" id="normal-type-icon" src="imagens/type_icons/Tipo_normal.png" alt="Normal">
+                    <img class="type-icon" id="fighting-type-icon" src="imagens/type_icons/Tipo_lutador.png" alt="Fighting">
+                    <img class="type-icon" id="flying-type-icon" src="imagens/type_icons/Tipo_voador.png" alt="Flying">
+                    <img class="type-icon" id="poison-type-icon" src="imagens/type_icons/Tipo_venenoso.png" alt="Poison">
+                    <img class="type-icon" id="ground-type-icon" src="imagens/type_icons/Tipo_terra.png" alt="Ground">
+                    <img class="type-icon" id="rock-type-icon" src="imagens/type_icons/Tipo_pedra.png" alt="Rock">
+                    <img class="type-icon" id="bug-type-icon" src="imagens/type_icons/Tipo_inseto.png" alt="Bug">
+                    <img class="type-icon" id="ghost-type-icon" src="imagens/type_icons/Tipo_fantasma.png" alt="Ghost">
+                    <img class="type-icon" id="steel-type-icon" src="imagens/type_icons/Tipo_metalico.png" alt="Steel">
+                    <img class="type-icon" id="fire-type-icon" src="imagens/type_icons/Tipo_fogo.png" alt="Fire">
+                    <img class="type-icon" id="water-type-icon" src="imagens/type_icons/Tipo_água.png" alt="Water">
+                    <img class="type-icon" id="grass-type-icon" src="imagens/type_icons/Tipo_planta.png" alt="Grass">
+                    <img class="type-icon" id="eletric-type-icon" src="imagens/type_icons/Tipo_elétrico.png" alt="Electric">
+                    <img class="type-icon" id="psychic-type-icon" src="imagens/type_icons/Tipo_psíquico.png" alt="Psychic">
+                    <img class="type-icon" id="ice-type-icon" src="imagens/type_icons/Tipo_gelo.png" alt="Ice">
+                    <img class="type-icon" id="dragon-type-icon" src="imagens/type_icons/Tipo_dragão.png" alt="Dragon">
+                    <img class="type-icon" id="dark-type-icon" src="imagens/type_icons/Tipo_noturno.png" alt="Dark">
+                    <img class="type-icon" id="fairy-type-icon" src="imagens/type_icons/Tipo_fada.png" alt="Fairy">
+                </div>
+
+                <div class="busca, input-group-prepend">
+                    <input type="text" id="search-box" class="form-control" placeholder="Buscar Pokemon">
+                    <button id="search-button" class="btn btn-outline-primary">Go</button>
+                </div>  
+            </nav>
+        </header>
+
+        <div class="poke-main-container">
+            <h3 class="list-title"><span class="type-name"></span> / Página #<span class="page-num"></span></h3>
+            <h3 class="query-title">Resultado para "<span class="query"></span>":</h3>
+            <div class="poke-container">
+                <!--POKEMONS SERÃO ADICIONADOS AQUI-->
+            </div>    
+        </div>
+        
+        <nav class="pager">
+            <ul class="pager-list pagination"></ul>
+        </nav>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
