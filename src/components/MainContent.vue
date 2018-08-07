@@ -121,10 +121,10 @@
             fetchPokemons() {
                 this.isLoading = true;
                 this.errors = [];
-                let url = 'https://pokeapi.co/api/v2/pokemon/?limit=100';
+                let url = 'https://pokeapi.co/api/v2/pokemon/?limit=50';
                 this.axios.get(url).then((response) => {
                     //this.total = response.data.count;
-                    //this.total = 100;
+                    this.total = 50;
                     for (let pokemon of response.data.results) {
                         this.fetchPokemon(pokemon);
                     }
