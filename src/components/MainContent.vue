@@ -80,11 +80,10 @@
 
 <script>
     import Card from "./Card";
-    import {PaginationControl, PaginationPage} from 'vue-smart-pagination'
 
     export default {
         name: 'MainContent',
-        components: {Card, PaginationPage, PaginationControl},
+        components: {Card},
         data() {
             return {
                 isLoading: false,
