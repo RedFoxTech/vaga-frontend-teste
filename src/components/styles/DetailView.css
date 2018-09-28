@@ -1,0 +1,31 @@
+.detail-view {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: none;
+    background-image: url(https://pokemongophilippines.files.wordpress.com/2016/08/whosthatpokemon_1349921665_7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    padding: 10px;
+    color: #FFF;
+}
+
+.sprite-image {
+  background-color: #5858588f;
+  width: 120px; 
+  height: 120px;
+  border: 5px solid #DEDEDE;
+  color: #585858;
+}
+
+.data-name {
+    font-size: 1em;
+    margin: 0 0 5px;
+    text-transform: capitalize;
+}
+
+.data-char {
+  font-size: 10px;
+  margin: 0;
+}

@@ -1,0 +1,14 @@
+.App-header {
+    background-color: #222222eb;
+    padding: 10px;
+    color: white;
+    z-index: 1;
+}
+
+.App-logo {
+    height: 60px;
+}
+
+.App-title {
+    font-size: 1em;
+}
