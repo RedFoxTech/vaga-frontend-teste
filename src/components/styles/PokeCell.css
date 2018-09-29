@@ -1,0 +1,12 @@
+.pokemon {
+    margin: 10px;
+    background-color: #F1F1F1;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+}
+
+.image-pokemon {
+    display: block;
+    margin: 0 auto;
+}
