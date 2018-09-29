@@ -4,7 +4,6 @@ import PokeList from './PokeList';
 import DetailView from './DetailView';
 import Pokemon from '../Pokemon';
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
-import './styles/App.css';
 
 class App extends Component {
   constructor() {
@@ -38,7 +37,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <DetailView pokemon={this.state.pokemon}/>
-        <div className="container">
+        <div className="container">          
           <PokeList handleOnClick={this.handleOnClick}/>
         </div>
       </div>

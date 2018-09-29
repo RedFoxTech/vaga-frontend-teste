@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PokeCell from './PokeCell';
 import { pokeClasses } from '../pokeClasses';
-import './styles/PokeList.css';
 
 const PokeList = ({ handleOnClick }) => { 
   const cells = pokeClasses.map(pokeClass => {
@@ -12,9 +11,9 @@ const PokeList = ({ handleOnClick }) => {
   });
 
   return (
-    <ul className="poke-list">
-      {cells}
-    </ul>
+    <div className="row">
+      {cells}     
+    </div>
   )
 }
 

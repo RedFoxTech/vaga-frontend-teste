@@ -1,21 +1,40 @@
 .detail-view {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: none;
-    background-image: url(https://pokemongophilippines.files.wordpress.com/2016/08/whosthatpokemon_1349921665_7.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0 auto;
-    padding: 10px;
-    color: #FFF;
+  position: fixed;
+  top: 0;
+  right: 0px;
+  bottom: 0px;
+  left: 0;
+  display: none;
+  width: auto;
+  height: auto;
+  background: rgb(34,34,34);
+  background: radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,rgba(241,241,241,1) 100%);
+  margin: 0 auto;
+  padding: 12em;
+  color: #222222eb;
+  text-align: center;
+  overflow: hidden;
+  z-index: 99;
+} 
+
+.close {
+  position: relative;
+  bottom: 70px;
+  background: #222222eb;
+  padding: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+  color: #FFF;
 }
 
 .sprite-image {
-  background-color: #5858588f;
+  background-color: #222222eb;
   width: 120px; 
   height: 120px;
-  border: 5px solid #DEDEDE;
+  border-radius: 5px;
   color: #585858;
 }
 
@@ -26,6 +45,6 @@
 }
 
 .data-char {
-  font-size: 10px;
+  font-style: italic;
   margin: 0;
 }

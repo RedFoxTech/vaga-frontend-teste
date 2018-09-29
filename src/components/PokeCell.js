@@ -4,12 +4,14 @@ import sprites from '../assets/sprites.png';
 
 const PokeCell = ({ pokeClass, handleOnClick }) => {
     const { id, backgroundPosition } = pokeClass;
-    const style = { backgroundImage: `url(${sprites})`, backgroundPosition};
+    const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
     return (
-        <li className="pokemon" onClick={() => handleOnClick(id)}>
-            <div style={style} className="image-pokemon"></div>
-        </li>
+        <div className="col-sm-2" onClick={() => handleOnClick(id)}>
+            <div className="pokemon">
+                <img src={image} className="image-pokemon"/>
+            </div>
+        </div>
     )
 } 
   

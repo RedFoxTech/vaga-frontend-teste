@@ -7,7 +7,6 @@
 }
 
 .image-pokemon {
-    width: 120px;
-    height: 120px;
-    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
 }
