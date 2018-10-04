@@ -1,0 +1,135 @@
+.navbar {
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.grid {
+  margin: 5% 0%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.pokemon {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 2%;
+  margin-bottom: 5%;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 10%;
+}
+.pokemon h3, .modal-title {
+  text-transform: capitalize;
+  font-size: 1em;
+  font-weight: bold;
+}
+.pokemon img {
+  width: 40%;
+}
+.pokemon a {
+  color: blue;
+}
+
+
+.modal {
+  font-family: 'Montserrat', sans-serif;
+}
+.modal-body {
+  padding: 0;
+}
+.modal-body h3 {
+  text-align: center;
+}
+
+.sprites {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+}
+.detalhes {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  padding-top: 1%;
+}
+
+.caixa-itens {
+  display: flex;
+  justify-content: space-around;
+  padding: 3% 0%;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.disable-mobile {
+  display: none;
+}
+
+
+/* ---------------------------------Media-Query---------------------------------- */
+
+@media (min-width: 992px) {
+
+  main {
+    margin: 5% 0% 5% 5%;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
+    background-color: rgba(248,249,250, 0.9);
+    width: 90%;
+    padding: 2%;
+  }
+
+  .container-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .text-muted {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+  .grid {
+    margin-top: 0%;
+    padding-top: 2%;
+  }
+
+  .pokemon {
+    background-color: rgba(42, 117, 187, 0.1);
+    width: 15%;
+    border-radius: 2%;
+    margin: 1%;
+  }
+  .pokemon:hover {
+    background-color: rgba(42, 117, 187, 0.5);
+    cursor: pointer;
+  }
+  .sprite-pokemon {
+    transition: all .3s ease-in-out;
+  }
+  .sprite-pokemon:hover {
+    transform: rotate(20deg) scale(2.0);
+  }
+
+  .disable {
+    display: none;
+  }
+  .disable-mobile {
+    display: block;
+  }
+}

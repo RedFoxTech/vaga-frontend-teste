@@ -1,0 +1,98 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">{{title}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0 disable">
+      <input 
+        class="form-control mr-sm-2" 
+        type="search" 
+        placeholder="Search" 
+        aria-label="Search" 
+        (keyup)="filter = $event.target.value">
+    </form>
+  </div>
+</nav>
+
+
+
+<main>
+    <section class="container-search">
+      <h3 class="text-muted disable-mobile">Lista de Pokemon</h3>
+        <div>
+            <form class="form-inline my-2 my-lg-0 disable-mobile">
+              <input 
+                 class="form-control mr-sm-2" 
+                 type="search" 
+                 placeholder="Search" 
+                 aria-label="Search" 
+                 (keyup)="filter = $event.target.value">
+            </form>
+          </div>
+    </section>
+
+  <section class="grid">
+    <div class="pokemon" (click)="getDetails(pokemon.url)" data-toggle="modal" data-target="#exampleModalCenter" *ngFor="let pokemon of list | filterByDescription: filter">
+      <h3>{{pokemon.name}}</h3>
+      <a (click)="getDetails(pokemon.url)" data-toggle="modal" data-target="#exampleModalCenter">
+        Detalhes
+      </a>
+    </div>
+</section>
+</main>
+
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" *ngIf="selectedPokemon">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">#{{selectedPokemon.id}} - {{selectedPokemon.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="sprites">
+            <img [src]="selectedPokemon.sprites.back_default" alt="{{selectedPokemon.name}}" class="sprite-pokemon">
+            <img [src]="selectedPokemon.sprites.back_shiny" alt="{{selectedPokemon.name}}" class="sprite-pokemon">
+            <img [src]="selectedPokemon.sprites.front_default" alt="{{selectedPokemon.name}}" class="sprite-pokemon">
+            <img [src]="selectedPokemon.sprites.front_shiny" alt="{{selectedPokemon.name}}" class="sprite-pokemon">
+        </div>
+
+        <div class="detalhes">
+          <h3>Detalhes</h3>
+          <div class="caixa-itens">
+            
+            <div class="item">
+              <h4>Id</h4>
+              <span>{{selectedPokemon.id}}</span>
+            </div>
+
+            <div class="item">
+              <h4>Base</h4>
+              <span>{{selectedPokemon.base_experience}}</span>
+            </div>    
+
+            <div class="item">
+              <h4>Peso</h4> 
+              <span>{{selectedPokemon.weight}}</span>
+            </div>
+
+            <div class="item">
+                <h4>Altura</h4>
+                <span>{{selectedPokemon.height}}</span>
+            </div>
+          </div>            
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
