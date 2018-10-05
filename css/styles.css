@@ -1,0 +1,43 @@
+body {
+    padding-top: 64px; /* Fix-Altura no topo do navbar */
+}
+
+.navbar {
+    background-color: #ffc107;
+}
+
+.hero {
+    background-image: url(../img/pokebg.jpg);
+    background-size: cover;
+    padding-top: 30vh;
+    padding-bottom: 45px;
+    padding-bottom: 100px;
+}
+
+.about-title {
+    background: url(../img/lugia_minimalist_.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#heroH1 {
+    font-size: 50px;  
+}
+
+#heroP {
+    font-size: 35px;
+    margin-bottom: 150px;
+}
+
+.about-text {
+    padding-top: 35vh;
+    padding-bottom: 15vh;
+}
+
+footer {
+    background: #989898;
+    padding: 5px 0 5px;
+    text-align: center;
+    color: #ffc107;
+    font-size: 15px
+}
