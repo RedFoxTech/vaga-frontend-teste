@@ -1,0 +1,11 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "Integração de api com node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'olá mundo' "
+  },
+  "author": "Lucas Nogueira",
+  "license": "ISC"
+}
