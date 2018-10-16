@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Front-end</title>
+    <link rel="stylesheet" href="estilo.css">
+
+    <script>
+            function mostrarFoto(a){
+                var element = document.getElementById("imagem");
+                var element2 = document.getElementById("descricao");
+    
+            if(a=="ash"){
+                element.getElementById="<br><img src="redfox/ash.png></img>"
+                element2.getElementById="<p>Ash é o personagem principal do anime. Ao completar 10 anos, ele parte de Pallet em jornada para ser tornar o melhor Mestre Pokémon de todos os tempos! Seu objetivo é capturar todos os Pokémon existentes e listá-los em usa PokéAgenda. Além disso, precisa batalhar pelas suas insígnias nos Ginásios oficializados pela Liga Pokémon. Ash é um bom treinador que ama muito todos seus Pokémon, tornando-o um treinador de grande valor!</p>"
+            
+            else if(a=="brock"){
+                element.getElementById="<br><img src="redfox/brock.png</img>"
+                element2.getElementById="<p>Brock é o melhor amigo de Ash e já foi por um bom tempo Líder do Ginásio da Cidade de Pewter. Ele possui um passado muito triste, onde seu pai o abandona junto com sua mãe e seus vários irmãos, só que depois sua mãe acaba morrendo e Brock como irmão mais velho toma conta de tudo: seus irmãos e o ginásio.</p>"
+            
+            else if(a=="misty"){
+                element.getElementById="<br><img src="redfox/misty.png</img>"
+                element2.getElementById="<p>Misty é a atual líder do Ginásio da Cidade de Cerulean. Entrou na história logo após Ash “sem-querer” roubar sua bicicleta. A partir daí, ela segue nosso treinador em sua jornada esperando que ele pague a bicicleta dela. O que acontece é que durante esse tempo, ela demonstrar ter criado sentimentos maiores que uma simples amizade com Ash. Misty é uma ruiva de personalidade muito forte, mas mesmo assim é muito meiga e ama acima de tudo os Pokémon aquáticos. Em contra partida, odeia os Pokémon insetos.</p>"
+            
+            else if(a=="may"){
+                element.getElementById="<br><img src="redfox/may.png</img>"
+                element2.getElementById="<p>May é a primeira amiga de Ash no continente Hoenn. Para variar, May conhece bem Ash depois que o Pikachu queima a bicicleta dela com um Choque do Trovão e por isso, ela decidiu por ela mesma e por Ash que eles dois viajarão juntos.</p>"
+            
+            else if(a=="dwan"){
+                element.getElementById="<br><img src="redfox/dawn.png</img>"
+                element2.getElementById="<p>Dawn é a Companheira de Ash em Sinnoh, como May Ela quer se torna a maior top Coordenadora do Mundo, e foi inspirada por sua mãe que venceu o grande festival. Dawn é uma garota 100% com a vida, apesar de seu amor com Kenny, Dawn conhece Ash quando a Equipe Rocket atacava novamente, e Dawn Pega o Pikachu de Ash e entrega a ele. Durante uma busca entre o chimcahr e piplup, Dawn se torna amiga de piplup, e escolhe ele como seu primeiro Pokémon.</p>"
+            
+            else if(a==max){
+                element.getElementById="<br><img src="redfox/max.png</img>"
+                element2.getElementById="<p>Max é o irmão mais novo de May, fã de Pokémon Max deseja se tornar um treinador tão forte quanto seu pai e assim Comandar o Ginásio de Petalburg. Max não tem nenhum Pokémon e seguiu Ash em sua jornada para aprender mais sobre os Pokémon, e assim começar sua verdadeira jornada.</p>"
+            
+            else if(a==gary){
+                element.getElementById="<br><img src="redfox/gary.png</img>"
+                element2.getElementById="<p>Gary é um dos treinadores e rivais mais antigo de Ash, apesar de ter bastante fama, o prazer de Gary Carvalho é humilhar Ash na frente de várias pessoas. O incrível foi quando Ash foi para a batalha por sua última insígnia no Ginásio de Veredia para derrotar. Depois disso ele muda seu respeito por Ash e se tornam bons amigos.</p>"
+           
+            else if(a==tracey){
+                element.getElementById="<br><img src="redfox/tracey.png</img>"
+                element2.getElementById="<p>Tracey é um belo observador Pokémon, ele não pode ver qualquer Pokémon que ele tem vontade de observar e desenhar. Tracey foi o companheiro de Ash juntamente com Misty durante as Ilhas Laranja.</p>"
+            
+            else if(a==paul){
+                element.getElementById="<br><img src="redfox/paul.png</img>"
+                element2.getElementById="<p>Paul é um treinador orgulhoso, não gosta de falhas de seus Pokémon. Ele se acha o melhor treinador e não de gosta de Pokémon fracassado, por isso abandonou o chimchar depois da luta em equipe junto com Ash, mas Ash aceitou o chimchar em sua equipe.</p>"
+            
+            else if(a==equiperocket){
+                element.getElementById="<br><img src="redfox/equiperocket.png</img>"
+                element2.getElementById="<p>Especialista em roubar Pokémons raros, a equipe é formada por Jesse, James e Meowth. O trio insiste em capturar Pikachu e está sempre no caminho de Ash.</p>"
+            }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>DESAFIO POKÉMON</h1>
+
+    <h2>ESCOLHA SEU PERSONAGEM:</h2>
+
+    <select class="personagem" onchange="mostrarFoto(value)" >
+        <option value="Ash">Ash</option> <br>
+        <option value="Pikachu">Pikachu</option>
+        <option value="Brock">Brock</option>
+        <option value="Misty">Misty</option>
+        <option value="May">May</option>
+        <option value="Dawn">Dawn</option>
+        <option value="Piplup">Piplup</option>
+        <option value="Gary">Gary</option>
+        <option value="Tracey">Tracey</option>
+        <option value="Paul">Paul</option>
+        <option value="Equipe Rocket">Equipe Rocket</option>
+    </select>
+    
+</body>
+</html>
