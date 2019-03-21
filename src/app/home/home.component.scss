@@ -94,3 +94,18 @@ hr {
     transform: translateY(-50%);
   }
 }
+
+@media (max-width: 768px) {
+  .input-poke {
+    left: 0;
+    width: 30%;
+    margin-left: 10%;
+    margin-top: 60px;
+  }
+  .types {
+    right: 0;
+    width: 30%;
+    margin-right: 12%;
+    margin-top: 60px;
+  }
+}

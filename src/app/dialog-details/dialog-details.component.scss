@@ -71,3 +71,24 @@ hr {
   margin: 10px 0px 0px 10px;
   display: inline-block;
 }
+
+
+@media (max-width: 768px) {
+  .card {
+    padding: 0px;
+    width: 60%;
+  }
+
+  .stat {
+    width: 50%;
+    margin: 0px;
+    
+    .title {
+      font-size: 10px;
+    }
+
+    .progress {
+      width: 40%;
+    }
+  }
+}
