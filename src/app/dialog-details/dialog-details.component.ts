@@ -14,8 +14,7 @@ export class DialogDetailsComponent implements OnInit {
   pokemon: Poke;
   constructor(public dialogRef: MatDialogRef<DialogDetailsComponent>) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   close() {
     this.dialogRef.close();
