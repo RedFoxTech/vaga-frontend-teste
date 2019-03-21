@@ -4,12 +4,12 @@
   <mat-form-field class="types">
     <mat-label>Types</mat-label>
     <mat-select [formControl]="type">
-      <mat-option (click)="getType('all')" [value]="all">All</mat-option>
+      <mat-option (click)="getType('all')">All</mat-option>
       <mat-option (click)="getType(type.name)" *ngFor="let type of types" [value]="type.name">{{type.name}}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field class="input-poke example-form-field">
-    <input (keyup)="searchPoke(search.value)" [(ngModel)]="search" matInput type="text" placeholder="Search Pokemon">
+    <input (keyup)="searchPoke(search)" [(ngModel)]="search" matInput type="text" placeholder="Search Pokemon">
   </mat-form-field>
 </mat-toolbar>
 
@@ -60,8 +60,4 @@
       </div>
     </mat-card>
   </div>
-</div>
-
-<div class="loader-spinner-overlay" *ngIf="pokeTypes.length == 0 && pokemons.length == 0">
-  <mat-spinner class="spinner" [color]="warn"></mat-spinner>
 </div>

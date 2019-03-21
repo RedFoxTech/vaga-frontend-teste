@@ -55,7 +55,6 @@ export class HomeComponent implements OnInit {
     });
     dialogRef.componentInstance.pokemon = pokemon;
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 
@@ -100,7 +99,6 @@ export class HomeComponent implements OnInit {
         });
         const arr = this.pokeTypes.concat(res.pokemon);
         this.pokeTypes = arr;
-        console.log(this.pokeTypes);
       });
     }
   }
