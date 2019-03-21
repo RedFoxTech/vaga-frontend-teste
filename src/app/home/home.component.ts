@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit {
       });
       const arr = this.pokemons.concat(res.results);
       this.pokemons = arr;
-      console.log(this.pokemons);
     });
   }
 

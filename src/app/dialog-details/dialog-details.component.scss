@@ -1,0 +1,73 @@
+.card {
+  margin: auto;
+  padding-top: 35px;
+  border-radius: 20px;
+  border: 1px solid #ffdd56;
+  background: none;
+  font-family: Cinzel Decorative, sans-serif;
+  width: 200px;
+  text-align: center;
+  color: white;
+  height: 230px;
+}
+
+.card:hover {
+  background-color: rgba(0, 0, 0, 0.319);
+  border-color: #72d0fb;
+}
+
+.name {
+  margin-top: -10px;
+}
+
+.infos {
+  display: inline-flex;
+}
+
+.info {
+  font-size: 11.5px;
+  font-weight: 500;
+  float: left;
+  margin: 0px 2px 0px 2px;
+}
+
+hr {
+  width: 65px;
+  margin-top: -10px;
+  border-radius: 5px;
+  border: none;
+  height: 5px;
+  background: linear-gradient(to right, #92df00, #4ea13f);
+}
+
+.hp {
+  margin-top: -5px;
+  font-size: 14px;
+}
+
+.close {
+  cursor: pointer;
+  float: right;
+}
+
+.number {
+  font-size: 12px;
+}
+
+.title {
+  font-size: 12px;
+  margin-top: 0px
+}
+
+.progress {
+  margin-top: -12px;
+  margin: -12px auto 0px auto;
+  width: 60px;
+}
+
+.stat {
+  text-align: center;
+  width: 120px;
+  margin: 10px 0px 0px 10px;
+  display: inline-block;
+}

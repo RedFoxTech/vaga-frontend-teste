@@ -1,0 +1,27 @@
+<i (click)="close()" class="fas fa-times close"></i>
+<mat-card class="card">
+  <img [src]="pokemon?.info?.sprites?.front_default">
+  <p class="name">{{pokemon?.name}}</p>
+  <hr>
+  <p class="hp">hp 100</p>
+  <div class="infos">
+    <p matTooltip="Pokemon experience" class="info">
+      <i class="fas fa-dumbbell"></i><br>
+      {{pokemon?.info?.base_experience}} |
+    </p>
+    <p matTooltip="Pokemon Type" class="info">
+      <i class="fas fa-crosshairs"></i><br>
+      {{pokemon?.info?.types[0]?.type?.name}}
+    </p>
+    <p matTooltip="Pokemon weight" class="info">
+      <i class="fas fa-weight"></i><br>
+      | {{pokemon?.info?.weight}}
+    </p>
+  </div>
+</mat-card>
+
+<div class="stat" *ngFor="let item of pokemon.info.stats">
+  <p class="number">{{item.base_stat}}</p>
+  <mat-progress-bar class="progress" mode="determinate" [value]="item.base_stat"></mat-progress-bar>
+  <p class="title">{{item.stat.name}}</p>
+</div>

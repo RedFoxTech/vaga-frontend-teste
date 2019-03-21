@@ -16,7 +16,7 @@
 <div class="search-results" infiniteScroll [infiniteScrollDistance]="0" [infiniteScrollThrottle]="50"
   (scrolled)="onScroll()">
   <div class="cards" *ngIf="pokemons.length != 0">
-    <mat-card (click)="openDialog()" class="card" *ngFor="let item of pokemons | orderBy: 'number'">
+    <mat-card (click)="openDialog(item)" class="card" *ngFor="let item of pokemons | orderBy: 'number'">
       <img *ngIf="item.info" [src]="item?.info?.sprites?.front_default">
       <p class="name">{{item.name}}</p>
       <hr>
@@ -39,7 +39,7 @@
   </div>
 
   <div class="cards" *ngIf="pokeTypes.length != 0">
-    <mat-card (click)="openDialog()" class="card" *ngFor="let item of pokeTypes">
+    <mat-card (click)="openDialog(item)" class="card" *ngFor="let item of pokeTypes">
       <img *ngIf="item.info" [src]="item?.info?.sprites?.front_default">
       <p class="name">{{item.pokemon.name}}</p>
       <hr>

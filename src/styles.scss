@@ -4,5 +4,11 @@
 
 body {
   margin: 0px;
-  background: linear-gradient(to bottom right,#024,#402);
+  font-family: Cinzel Decorative, sans-serif;
+  background:
+  linear-gradient(
+    rgba(0, 0, 0, 0.884),rgba(0, 0, 0, 0.829)
+  ),
+  url('./assets/bg.jpg') no-repeat;
+  background-attachment: fixed;
 }
