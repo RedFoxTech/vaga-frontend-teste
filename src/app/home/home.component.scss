@@ -1,0 +1,97 @@
+.mat-elevation-z6 {
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 0px 10px 0px black;
+}
+
+.logo {
+  margin-left: 20px;
+}
+
+.cards {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.card {
+  padding-top: 35px;
+  cursor: pointer;
+  position: initial;
+  border-radius: 20px;
+  border: 1px solid #ffdd56;
+  margin: 0px 10px 20px 10px;
+  display: inline-block;
+  background: none;
+  font-family: Cinzel Decorative, sans-serif;
+  width: 200px;
+  text-align: center;
+  color: white;
+  height: 230px;
+}
+
+.card:hover {
+  background-color: rgba(0, 0, 0, 0.319);
+  border-color: #72d0fb;
+}
+
+.name {
+  margin-top: -10px;
+}
+
+.infos {
+  display: inline-flex;
+}
+
+.info {
+  font-size: 11.5px;
+  font-weight: 500;
+  float: left;
+  margin: 0px 2px 0px 2px;
+}
+
+hr {
+  width: 65px;
+  margin-top: -10px;
+  border-radius: 5px;
+  border: none;
+  height: 5px;
+  background: linear-gradient(to right, #92df00, #4ea13f);
+}
+
+.hp {
+  margin-top: -5px;
+  font-size: 14px;
+}
+
+.input-poke {
+  position: fixed;
+  right: 0;
+  margin-right: 250px;
+  font-size: 12px;
+}
+
+.types {
+  position: fixed;
+  right: 0;
+  margin-right: 60px;
+  font-size: 12px;
+}
+
+.loader-spinner-overlay{
+  position: absolute;
+  width:100%;
+  top:0;
+  left: 0;
+  opacity: 1;
+  z-index: 500000;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.69);
+  .spinner{
+    position: relative;
+    top: 45%;
+    margin: auto;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,67 @@
+<mat-toolbar color="warn" class="mat-elevation-z6">
+  <img class="logo" src="http://www.pngmart.com/files/5/Anime-Pokemon-PNG-Transparent.png" width="75px">
+  <span>PokemonWiki</span>
+  <mat-form-field class="types">
+    <mat-label>Types</mat-label>
+    <mat-select [formControl]="type">
+      <mat-option (click)="getType('all')" [value]="all">All</mat-option>
+      <mat-option (click)="getType(type.name)" *ngFor="let type of types" [value]="type.name">{{type.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="input-poke example-form-field">
+    <input (keyup)="searchPoke(search.value)" [(ngModel)]="search" matInput type="text" placeholder="Search Pokemon">
+  </mat-form-field>
+</mat-toolbar>
+
+<div class="search-results" infiniteScroll [infiniteScrollDistance]="0" [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()">
+  <div class="cards" *ngIf="pokemons.length != 0">
+    <mat-card (click)="openDialog()" class="card" *ngFor="let item of pokemons | orderBy: 'number'">
+      <img *ngIf="item.info" [src]="item?.info?.sprites?.front_default">
+      <p class="name">{{item.name}}</p>
+      <hr>
+      <p class="hp">hp 100</p>
+      <div class="infos">
+        <p matTooltip="Pokemon experience" class="info">
+          <i class="fas fa-dumbbell"></i><br>
+          {{item?.info?.base_experience}} |
+        </p>
+        <p matTooltip="Pokemon Type" class="info">
+          <i class="fas fa-crosshairs"></i><br>
+          {{item?.info?.types[0]?.type?.name}}
+        </p>
+        <p matTooltip="Pokemon weight" class="info">
+          <i class="fas fa-weight"></i><br>
+          | {{item?.info?.weight}}
+        </p>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="cards" *ngIf="pokeTypes.length != 0">
+    <mat-card (click)="openDialog()" class="card" *ngFor="let item of pokeTypes">
+      <img *ngIf="item.info" [src]="item?.info?.sprites?.front_default">
+      <p class="name">{{item.pokemon.name}}</p>
+      <hr>
+      <p class="hp">hp 100</p>
+      <div class="infos">
+        <p class="info">
+          <i class="fas fa-dumbbell"></i><br>
+          {{item?.info?.base_experience}} |
+        </p>
+        <p class="info">
+          <i class="fas fa-crosshairs"></i><br>
+          {{item?.info?.types[0]?.type?.name}}
+        </p>
+        <p class="info">
+          <i class="fas fa-weight"></i><br>
+          | {{item?.info?.weight}}
+        </p>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<div class="loader-spinner-overlay" *ngIf="pokeTypes.length == 0 && pokemons.length == 0">
+  <mat-spinner class="spinner" [color]="warn"></mat-spinner>
+</div>
