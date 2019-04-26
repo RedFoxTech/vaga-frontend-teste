@@ -29,43 +29,35 @@
         console.log(res)
 
         let data = `
-        
-    <div class="caixa">
-        
-        <div class="detalhes">
-            <h3>Pressione F5 para pesquisar mais algum</h3> 
     
+    <h1>Esse é o Pokemon ideal para você!!</h1>
+    <div class="caixa-pokemon">
+        
+        <div class="pokemon">
+        <h1>${res.forms[0].name}</h1>
+            <div class="separa">
             <img src="${res.sprites.front_default}" whidth="400">
             <img src="${res.sprites.back_default}">
+            </div>
+        </div>
+        
+        <div class="detalhes">
+              
             <p>ID:${res.id}</p>
-            <h1>${res.forms[0].name}</h1>
             <h2>Tipo:${res.types[0].type.name}</h2>
             <h4>Altura:${res.height} m/c</h4>
             <h4>Peso:${res.weight}Kg/gr</h4>
-            
         </div>
-        <div class="pokemon">
-            <img src="./img/evolucao1.gif" alt="">
-            <h1>X</h1>
-            <img src="./img/evolucao2.gif" alt="">
-            
-        </div>
+        
     </div>
 
         `;
-        if(id ==716){
-            alert("Parabens Você encontrou Xerneias")
-            pokemon.innerHTML = data;
-        }
-        else{
+         
+        pokemon.innerHTML = data;
 
-            pokemon.innerHTML = data
-        }
+    });
 
-        
-    })
-
-    }
+}
 
  
  

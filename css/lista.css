@@ -1,27 +1,45 @@
-body{
-    background-image: url(../img/mapa.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-.caixa{
-    width: 800px;
-    height: 400px;
+ 
+.caixa-pokemon{
+    width: auto;
+    height: auto;
     border-radius: 15px;
-    box-shadow: 20px 20px  30px;
+    box-shadow: 10px 20px  30px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     color: #1051aa;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #1051aa;
+}
+
+.pokemon{
+    flex-direction: column;
+}
+
+.separa{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.detalhes{
+    width: 350px;
 }
 
 .detalhes h3, h2{
     color: black;
 }
-.pokemon{
-    display: flex;
-    align-items: center;
+
+.detalhes p{
+    width: auto;
 }
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+ 
+
 
 
  
