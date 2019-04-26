@@ -1,6 +1,6 @@
 
     
-    let pokemon = document.querySelector(".container");
+    let pok = document.querySelector(".container");
     
 
     url = "https://pokeapi.co/api/v2/pokemon/"
@@ -53,7 +53,7 @@
 
         `;
          
-        pokemon.innerHTML = data;
+        pok.innerHTML = data;
 
     });
 
