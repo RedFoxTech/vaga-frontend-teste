@@ -1,0 +1,403 @@
+$cor-padrao: darken(#002ea8, 5%);
+
+
+@mixin display-flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+body{
+    margin: 0;;
+}
+
+/* BARRA VERDE======================= */
+.barra-verde{
+
+    background-color: $cor-padrao;
+
+    height: 10px;
+    width: 100vw;
+}
+
+/* GRID===================================== */
+
+.grid{
+    display: grid;
+    width: 100vw;
+    height: 800px;
+    grid-template-columns: repeat(1, 1tr);
+    grid-template-rows: repeat(5,minmax(100vw auto));
+    grid-template-areas: 
+    "header"
+    "main"
+    "section"
+    "aside"
+    "footer";
+}
+
+
+/* HEADER:============================================= */
+
+header{
+    display:flex;
+    justify-content: center;
+    width: 100vw;
+    grid-area: header;
+    background-image: url("../img/mapa.png");
+    height: 700px; 
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+    background-repeat: no-repeat;
+
+    h3{
+        width: 400px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        font-family: 'Pacifico', cursive;
+        font-size: 35pt;
+        color: black;
+        font-weight: 500;
+        text-align: start;
+        margin: 0 auto;
+    }
+    span{
+        color: $cor-padrao;
+    }
+    p{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+.caixa{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+    width: 70%;
+}
+.txt1{
+    width: 400px; 
+
+    p{
+        color: black;
+    }
+}
+ 
+
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 200px;
+    color: white;
+    
+}
+
+ 
+ 
+
+.rodela{
+    width: 50px;
+    height: 50px;
+    @include display-flex-center;
+    border-radius: 100px; 
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 1s;
+
+        &:hover{
+            background-color: $cor-padrao;
+        }
+        a{
+            color: white;
+        }
+}
+
+.imagem{
+    width: 22vw;
+    align-self: flex-end;
+    align-items: center;
+} 
+
+.imgimg{
+    width: 100%;
+    
+}
+
+
+/* MAIN =============================*/
+
+main{
+    grid-area: main;
+    height: 350px;  
+    flex-direction: column;
+    @include display-flex-center;
+}
+
+.estruturar{
+    width: 100vw;
+    height: 300px;;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+ 
+
+.circulo{
+    width: 90px;
+    height: 90px;
+    border-radius: 100px; 
+    cursor: pointer;
+    background-color: $cor-padrao;
+    margin: 0 auto;     
+    @include display-flex-center;
+}
+
+
+.cx img{
+    width: 300px;
+    background-size: 100%;
+    transition: .3s;
+    cursor: pointer;
+        &:hover{
+            margin-top: -20px;
+            width: 320px;
+        }
+}
+
+
+
+
+
+
+/* SECTION============================= */
+section{
+    grid-area: section;
+    background-color: #e3e3e3;
+    width: 100vw;  
+    height: 450px; 
+    @include display-flex-center;
+}
+
+
+.section{
+    width: 75vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+}
+
+.texto{
+
+    width: 30vw;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h2{
+        font-family: sans-serif;
+        font-size: 12;
+    }
+    p{
+        font-family: sans-serif;
+    }
+}
+    
+ 
+
+ 
+
+ 
+    
+
+.inputs{
+    @include display-flex-center;
+
+    [type=text]{
+        padding: 12px;
+        width: 250px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-right: none; 
+        border: 1px solid #f7f7f7;
+
+        &:hover{
+            border: 1px solid $cor-padrao ;
+        }
+    }
+
+    button{
+        padding: 10px;
+        width: 100px;
+        background-color: $cor-padrao ;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 12pt;
+        font-weight: 500;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        transition: .5s;
+            &:hover{
+                background-color: #fff;
+                color: $cor-padrao ;
+            }
+    }
+}
+
+.video{
+     
+    width: 600px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;     
+}
+
+
+/* ASIDE================================ */
+aside{
+    grid-area: aside;
+    width: 100vw;
+    height: 400px; 
+    flex-direction: column;
+    text-align: center;
+    @include display-flex-center;
+}
+
+.final{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#paragrafo1{
+    font-family: sans-serif;
+    font-size: 11pt;
+    font-style: italic;
+    color: gray;
+    width: 50vw;
+    text-align: center;
+      
+}
+
+#titulo1{
+    font-family: sans-serif;
+    font-size: 12pt;
+    width: 50vw;
+    text-align: center;
+    margin: 0 auto;
+     
+}
+
+.img6{
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 20px;
+
+    img{
+        width: 50px;
+        height: 50px;
+    }
+    
+}
+ 
+
+ 
+
+.clara{
+    opacity: 0.5; 
+}
+
+.titulo2{
+    font-family: sans-serif;
+    font-size: 16pt;
+    width: 50vw;
+    text-align: center;  
+}
+
+.paragrafo2{
+    font-family: sans-serif;
+    font-size: 11pt;
+    font-style: italic;
+    color: gray;
+    width: 50vw;
+    text-align: center;
+}
+
+.social{
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.icones{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 100px;
+    cursor: pointer;
+    @include display-flex-center;
+        &:hover{
+            background-color: $cor-padrao;
+        }
+}
+
+
+
+
+
+/* FOOTER-================================ */
+footer{
+    grid-area: footer;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color:  #e3e3e3;
+
+    h1 h2 a{
+        font-family: sans-serif;
+    }
+}
+
+
+.contatos{
+    height: 90px;
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2px;
+
+    a{
+        text-decoration: none;  
+        color: black;
+        font-family: sans-serif;
+        font-size: 11pt;
+            &:hover{
+                color: $cor-padrao ;
+            }
+    }
+}
+
+
+
+ 
+
+
