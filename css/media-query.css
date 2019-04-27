@@ -2,8 +2,31 @@
 /* MEDIAQUERY */
 @media (max-width: 500px) {
     /* CONFIGURANDO APENAS O ASIDE */
+    header{
+      height: auto;
+    }
+    .caixa{
+      height: 400px;
+    }
     .txt1 {
       width: 100vw; } }
+    main{
+      height: 1000px;
+    }
+    .estruturar{
+      height: auto;
+      flex-direction: column;
+    }
+    section{
+      height: auto;
+    }
+    .video{
+      width: 100vw;
+      height: auto;
+    }
+    .caixa-pokemon{
+      flex-direction: column;
+    }
   /* Breakpoint para phone 1000px =====================*/
   @media (max-width: 900px) {
     header {
@@ -33,7 +56,7 @@
   
     /* ESTRUTURA SECTION */
     .section {
-      height: 800px;
+      height: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -46,8 +69,7 @@
     .inputs [type=text] {
       width: 150px; }
   
-    .video {
-      display: none; }
+     
   
     /* ESTRUTURA ASIDE */
     aside {
@@ -87,8 +109,7 @@
       width: 30vw; }
   
     /* ESTRUTURA SECTION */
-    section {
-      height: 800px; }
+     
   
     .section {
       width: 100vw; } }
@@ -110,9 +131,7 @@
       width: 30vw; }
   
     /* estruturando o section */
-    section {
-      height: 500px; }
-  
+     
     /* ESTRUTURANDO O ASIDE */
     aside {
       height: 700px; }
