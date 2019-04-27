@@ -400,7 +400,7 @@ footer{
 /* AGORA A PARTE MAIS DIFICIL DO MUNDO HAHAHA */
 /* MEDIAQUERY */
 @media(max-width: 500px) {
-    /* CONFIGURANDO APENAS O ASIDE */
+
     header{
       height: auto;
     }
@@ -425,6 +425,10 @@ footer{
     }
     .caixa-pokemon{
       flex-direction: column;
+    }
+     
+    #delete{
+      display: none;
     }
   /* Breakpoint para phone 1000px =====================*/
   @media(max-width: 900px) {
