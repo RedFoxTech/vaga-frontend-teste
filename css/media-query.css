@@ -1,6 +1,6 @@
 /* AGORA A PARTE MAIS DIFICIL DO MUNDO HAHAHA */
 /* MEDIAQUERY */
-@media (max-width: 500px) {
+@media(max-width: 500px) {
     /* CONFIGURANDO APENAS O ASIDE */
     header{
       height: auto;
@@ -28,7 +28,7 @@
       flex-direction: column;
     }
   /* Breakpoint para phone 1000px =====================*/
-  @media (max-width: 900px) {
+  @media(max-width: 900px) {
     header {
       width: 100vw;
       background-size: none;
@@ -51,8 +51,7 @@
       height: 1000px; }
   
     .estruturar {
-      display: flex;
-      flex-direction: column; }
+      display: flex; }
   
     /* ESTRUTURA SECTION */
     .section {
@@ -91,6 +90,12 @@
   
     footer {
       width: 100vw; } }
+
+    /* Curiosidades ===================================== */
+
+    
+
+
   /* Breakpoint para tablets 1200px =====================*/
   @media (max-width: 1300px) {
     header {
@@ -145,6 +150,13 @@
   
     .social {
       width: 20vw; } }
+
+    #info{
+      height: 100vh;
+      width: 100vw;
+    }
+
+    
   
-  /*# sourceMappingURL=style.css.map */
+ 
   

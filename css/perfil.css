@@ -50,3 +50,30 @@ section{
     color: black
 }
 
+@media(max-width: 800px){
+    section{
+        background-image: none;
+    }
+    .perfil{
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        text-align: center;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .perfil img{
+        width: 300px;
+        height: 300px;
+    }
+    .texto{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
