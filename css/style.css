@@ -1,0 +1,14 @@
+body, h1, p, div {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    /* display: flex; */
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: tomato;
+}
