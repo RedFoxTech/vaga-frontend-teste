@@ -1,6 +1,7 @@
 const root = document.querySelector('#root')
 const myContainerModal = document.querySelector('[data-modal="container"]');
 const btnClose = document.querySelector('[data-modal="close"]');
+const myModal = document.querySelector('.my__modal')
 
 const container = document.createElement('div');
 container.setAttribute('class', 'container-fluid');
@@ -31,14 +32,6 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
             btnCard.innerHTML = 'Saiba mais';
             btnCard.classList.add('d-block', 'btn', 'btn-outline-light')
 
-            btnCard.addEventListener('click', () => {
-                myContainerModal.classList.add('ativo');
-            })
-
-            btnClose.addEventListener('click', () => {
-                myContainerModal.classList.remove('ativo');
-            })
-
             const url = item.url;
             fetch(`${url}`)
                 .then((response) => {
@@ -51,6 +44,22 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
                         img.setAttribute('src', item.sprites.front_default);
                         card.appendChild(img);
                         card.appendChild(btnCard);
+
+                        btnCard.addEventListener('click', () => {
+                            myContainerModal.classList.add('ativo');
+                            const arrAbility = item.abilities;
+                            arrAbility.forEach((item) => {
+                                console.log(item.ability.name)
+                            })
+                            // const txt = document.createElement('p');
+                            // txt.innerHTML = item.abilities.ability.name;
+                            // myModal.appendChild(txt);
+                        })
+
+                        btnClose.addEventListener('click', () => {
+                            myContainerModal.classList.remove('ativo');
+                        })
+
                     })
                 })
         })
