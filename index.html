@@ -5,15 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <title>API - Pokemon</title>
 </head>
 
 <body>
-    <section>
-        <div class="container">
-            <input type="text">
-            <button class="btn">Pesquisar</button>
+    <section id="root"></section>
+
+    <section class="my__modal__container" data-modal="container">
+        <div class="my__modal border border-dark rounded-lg">
+            <button data-modal="close" class="my__close bg-danger border border-dark rounded-circle">X</button>
+            <div>
+                <p>Modal Abriu</p>
+            </div>
         </div>
     </section>
 
