@@ -1,14 +1,52 @@
-body, h1, p, div {
-    padding: 0;
-    margin: 0;
+.my__modal__container {
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
-.container {
-    /* display: flex; */
-    max-width: 980px;
-    margin: 0 auto;
+.my__modal__container.ativo {
+     display: flex; 
+} 
+
+.my__modal {
+    width: 300px !important; 
+    background: #fff;
+    padding: 40px;
+    position: relative;
 }
 
-.card {
-    background-color: tomato;
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.ativo .modal {
+    animation: modal .3s forwards;
+}
+
+.my__close {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    position: absolute;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    cursor: pointer;
 }
