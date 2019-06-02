@@ -2,6 +2,7 @@ const root = document.querySelector('#root')
 const myContainerModal = document.querySelector('[data-modal="container"]');
 const btnClose = document.querySelector('[data-modal="close"]');
 const myModal = document.querySelector('.my__modal')
+// const form = document.querySelector('form')
 
 const container = document.createElement('div');
 container.setAttribute('class', 'container-fluid');
@@ -45,21 +46,35 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
                         card.appendChild(img);
                         card.appendChild(btnCard);
 
-                        btnCard.addEventListener('click', () => {
+                        function abrirModal() {
                             myContainerModal.classList.add('ativo');
-                            const arrAbility = item.abilities;
-                            arrAbility.forEach((item) => {
-                                console.log(item.ability.name)
+                            item.abilities.forEach((item) => {
+                                const txt = document.createElement('p');
+                                txt.innerHTML = `Ability name: ${item.ability.name}`;
+                                myModal.appendChild(txt);
+
+                                function fecharModal() {
+                                    myContainerModal.classList.remove('ativo');
+                                    myModal.appendChild(txt).remove();
+                                }
+
+                                btnClose.addEventListener('click', fecharModal)
                             })
-                            // const txt = document.createElement('p');
-                            // txt.innerHTML = item.abilities.ability.name;
-                            // myModal.appendChild(txt);
-                        })
 
-                        btnClose.addEventListener('click', () => {
-                            myContainerModal.classList.remove('ativo');
-                        })
+                            item.types.forEach((item) => {
+                                const txt = document.createElement('p');
+                                txt.innerHTML = `Type name: ${item.type.name}`;
+                                myModal.appendChild(txt);
 
+                                function fecharModal() {
+                                    myContainerModal.classList.remove('ativo');
+                                    myModal.appendChild(txt).remove();
+                                }
+                                btnClose.addEventListener('click', fecharModal)
+                            })
+                        }
+
+                        btnCard.addEventListener('click', abrirModal)
                     })
                 })
         })
@@ -67,3 +82,5 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
     .catch((erro) => {
         console.log(erro)
     })
+
+
