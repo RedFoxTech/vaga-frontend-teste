@@ -4,13 +4,13 @@ body{
 }
 nav{
     height: 90px;
-    background-color: rgb(221, 18, 18);
+    background-color: rgb(46, 46, 46);
     display: flex;
     align-items: center;
 }
-.logo img{
-    height: 65%;
-    margin-left: 50px;
+nav a img{
+    height: 65px;
+    margin-left: 30px;
     cursor: pointer;
 }
 section{
@@ -19,7 +19,7 @@ section{
     flex-wrap: wrap;
 }
 .container img{
-    height: 20vh;
+    height: 15vh;
 }
 .card {
     margin: 1rem;
