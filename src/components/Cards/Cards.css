@@ -1,0 +1,48 @@
+.pokemon-card{
+    background-color: #003A70;
+    width: 95%;
+  max-width: 300px;
+  margin: 1em auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0,0,0,.12);
+  font-family: 'Roboto', sans-serif;
+}
+
+.card .card-image {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card .card-header {
+  padding : 1.5em 1.2em 0;
+}
+
+.card .card-header .card-subtitle, .card .card-header .card-title {
+  margin: 0
+}
+
+.card .card-header .card-subtitle {
+  color: #666;
+  text-transform: uppercase;
+  font-size: .9em;
+}
+
+.card .card-header .card-title {
+  font-weight: 900;
+}
+
+.card .card-content {
+  color: #999;
+  padding: 1.2em;
+  font-size: 1.05em;
+}
+
+.btn{
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .5rem;
+    margin: 15px;
+}
+    
