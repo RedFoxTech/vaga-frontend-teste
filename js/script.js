@@ -1,11 +1,10 @@
-const root = document.querySelector('#root')
+const root = document.querySelector('[data-root="container"]')
 const myContainerModal = document.querySelector('[data-modal="container"]');
 const btnClose = document.querySelector('[data-modal="close"]');
-const myModal = document.querySelector('.my__modal')
-// const form = document.querySelector('form')
+const myModal = document.querySelector('[data-modal="my-container"]');
 
 const container = document.createElement('div');
-container.setAttribute('class', 'container-fluid');
+container.classList.add('container-fluid');
 root.appendChild(container);
 
 const row = document.createElement('div');
@@ -31,7 +30,7 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
 
             const btnCard = document.createElement('button');
             btnCard.innerHTML = 'Saiba mais';
-            btnCard.classList.add('d-block', 'btn', 'btn-outline-light')
+            btnCard.classList.add('d-block', 'btn', 'btn-outline-light');
 
             const url = item.url;
             fetch(`${url}`)
@@ -46,19 +45,23 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
                         card.appendChild(img);
                         card.appendChild(btnCard);
 
-                        function abrirModal() {
-                            myContainerModal.classList.add('ativo');
+                        function openModal() {
+                            myContainerModal.classList.toggle('ativo');
+
+                            const imgModal = document.createElement('img');
+                            imgModal.setAttribute('src', item.sprites.front_shiny);
+                            myModal.appendChild(imgModal);
+
                             item.abilities.forEach((item) => {
                                 const txt = document.createElement('p');
                                 txt.innerHTML = `Ability name: ${item.ability.name}`;
                                 myModal.appendChild(txt);
 
-                                function fecharModal() {
+                                function closeModal() {
                                     myContainerModal.classList.remove('ativo');
                                     myModal.appendChild(txt).remove();
                                 }
-
-                                btnClose.addEventListener('click', fecharModal)
+                                btnClose.addEventListener('click', closeModal)
                             })
 
                             item.types.forEach((item) => {
@@ -66,15 +69,15 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
                                 txt.innerHTML = `Type name: ${item.type.name}`;
                                 myModal.appendChild(txt);
 
-                                function fecharModal() {
+                                function closeModal() {
                                     myContainerModal.classList.remove('ativo');
                                     myModal.appendChild(txt).remove();
+                                    myModal.appendChild(imgModal).remove();
                                 }
-                                btnClose.addEventListener('click', fecharModal)
+                                btnClose.addEventListener('click', closeModal)
                             })
                         }
-
-                        btnCard.addEventListener('click', abrirModal)
+                        btnCard.addEventListener('click', openModal)
                     })
                 })
         })
