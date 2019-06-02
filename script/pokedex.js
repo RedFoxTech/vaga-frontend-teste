@@ -10,11 +10,21 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
         const card = document.createElement("div");
         card.setAttribute("class", "card");
         container.appendChild(card);
-    
-        const nomePokemon = document.createElement("h1");
-        nomePokemon.innerHTML = pokemon.name;
-        card.appendChild(nomePokemon)
+        
+        card.addEventListener("click", ()=>{
+            let modal = document.querySelector(".modal");
 
+            if(modal.classList.contains('ativo')) {
+                modal.classList.remove('ativo');  
+            } else {
+                modal.classList.add('ativo');
+            }
+                })
+        
+        const nomePokemon = document.createElement("h1");
+        nomePokemon.innerHTML = pokemon.name.toUpperCase();
+        card.appendChild(nomePokemon)
+        
         const url = pokemon.url;
         fetch(url)
         .then((response)=>{
@@ -27,6 +37,7 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
                 const imagem = document.createElement("img");
                 imagem.setAttribute("src", cada.sprites.front_default)
                 card.appendChild(imagem);
+                
             });
 
         })
@@ -38,3 +49,5 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
 .catch((erro)=>{
     console.log("erro")
 })
+
+
