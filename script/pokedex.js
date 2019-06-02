@@ -11,16 +11,6 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
         card.setAttribute("class", "card");
         container.appendChild(card);
         
-        card.addEventListener("click", ()=>{
-            let modal = document.querySelector(".modal");
-
-            if(modal.classList.contains('ativo')) {
-                modal.classList.remove('ativo');  
-            } else {
-                modal.classList.add('ativo');
-            }
-                })
-        
         const nomePokemon = document.createElement("h1");
         nomePokemon.innerHTML = pokemon.name.toUpperCase();
         card.appendChild(nomePokemon)
@@ -37,6 +27,17 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
                 const imagem = document.createElement("img");
                 imagem.setAttribute("src", cada.sprites.front_default)
                 card.appendChild(imagem);
+
+                card.addEventListener("click", ()=>{
+                    const modal = document.querySelector(".modal");
+        
+                    if(modal.classList.contains('ativo')) {
+                        modal.classList.remove('ativo');
+                    } else {
+                        modal.classList.add('ativo');
+                    }
+
+                })
                 
             });
 

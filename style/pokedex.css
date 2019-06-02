@@ -19,7 +19,6 @@ body{
     width: 550px;
     border: 5px solid rgb(37, 37, 37);
     border-radius: 20px;
-    z-index: 5;
 }
 .modal{
     display: none;
@@ -27,6 +26,7 @@ body{
 .modal.ativo{
     display: block;
     position: fixed;
+    z-index: 1;
 }
 nav{
     height: 90px;
@@ -47,7 +47,7 @@ nav a img{
 section img{
     height: 15vh;
 }
-.card {
+.card{
     margin: 1rem;
     background: white;
     box-shadow: 8px 6px 8px -8px rgba(0, 0, 0, 0.815);
