@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+    background-color: #FBFBFB;
+}
+nav{
+    height: 90px;
+    background-color: rgb(221, 18, 18);
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    height: 65%;
+    margin-left: 50px;
+    cursor: pointer;
+}
+section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.container img{
+    height: 20vh;
+}
+.card {
+    margin: 1rem;
+    background: white;
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all .2s linear;
+  }
+  h1 {
+    text-align: center;
+    padding: 1.5rem 2.5rem;
+    background-image: linear-gradient(120deg, #FFDE00 0%, #B3A125 100%);
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+    color: white;
+  }
+  h1 img{
+    max-height: 150px
+  }
+  
+  img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+  }
