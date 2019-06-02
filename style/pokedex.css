@@ -13,36 +13,63 @@ nav a img{
     margin-left: 30px;
     cursor: pointer;
 }
-section{
+.container{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.container img{
+section img{
     height: 15vh;
 }
 .card {
     margin: 1rem;
     background: white;
-    box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+    box-shadow: 8px 6px 8px -8px rgba(0, 0, 0, 0.815);
     border-radius: 12px;
     overflow: hidden;
     transition: all .2s linear;
-  }
-  h1 {
+    cursor: pointer;
+}
+.card:hover{
+    transform: scale(0.9);
+}
+h1 {
     text-align: center;
     padding: 1.5rem 2.5rem;
     background-image: linear-gradient(120deg, #FFDE00 0%, #B3A125 100%);
     margin: 0 0 2rem 0;
     font-size: 1.5rem;
     color: white;
-  }
-  h1 img{
+    font-family: 'Russo One', sans-serif;
+    font-weight: normal;
+}
+h1 img{
     max-height: 150px
-  }
+}
   
-  img {
+img {
     display: block;
     margin: 1rem auto;
     max-width: 100%;
-  }
+}
+.card:nth-child(2n) h1 {
+    background-image: linear-gradient(120deg, #3B4CCA 0%, #1d2665 100%);
+}
+  
+.card:nth-child(4n) h1 {
+    background-image: linear-gradient(120deg, #FF0000 0%, #CC0000 100%);
+}
+  
+.card:nth-child(5n) h1 {
+    background-image: linear-gradient(120deg, #FF0000 0%, #CC0000 100%);
+}
+@media screen and (min-width: 600px) {
+    .card {
+      flex: 1 1 calc(50% - 2rem);
+    }
+}
+@media screen and (min-width: 900px) {
+    .card {
+      flex: 1 1 calc(33% - 2rem);
+    }
+}
