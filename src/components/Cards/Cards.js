@@ -1,41 +1,64 @@
 import React from 'react'
 import {Component} from 'react'
-import pikachu from './pikachu.png'
-import charmanter from './charmanter.png'
-import squirtle from './squirtle.png'
+
+import Pokedex from 'pokedex-promise-v2';
+
 import './Cards.css'
 
 class Cards extends Component{
-    render(){
-        return (
-           <cards>
-             <div className="container marketing">
+    
+    constructor(props) {
+        super(props);
 
-        <div className="row">
-          <div className="pokemon-card col-lg-4">
-            <img className="rounded-circle" src={pikachu} width="140" height="140" />
-            <h2>Título</h2>
+        this.P_API = new Pokedex();
+        this.state = {};
+        this.get_detailsPokemon(this.props.pokemon.p_id);
+    }
+    
+    get_detailsPokemon(p_id){
         
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <button type="button" className="btn btn-sm btn-outline-secondary">Ver mais detalhes</button>
+        let self = this
+        this.P_API.getPokemonByName(p_id)
+        .then(function(response) {
+          self.setState({pokemon: response})
+        })
+        .catch(function(error) {
+          console.log('There was an ERROR: ', error);
+        });
+    }
+    
+    render(){
+        let pokemon = this.state.pokemon;
+        return (
+          <div className="pokemon-card marketing">
+            { pokemon && <div className="container">
+                    <div className="row">
+                        <div className="col col-lg-6">
+                    
+                            <img className="rounded-circle float-left" src={pokemon.sprites.front_default} width="140" height="140"/>
+                            <span className="badge badge-success ml-2"><i className="fas fa-id-badge p-1"></i>{pokemon.name}</span>
+                
+                            <div className="healthy">
+                                <span className="badge badge badge-warning">Altura: <i className="fas fa-arrows-alt-v p-1"></i>{pokemon.height}</span>
+                                <span className="badge badge badge-danger">Peso: <i className="fas fa-weight p-1"></i>{pokemon.weight}</span>
+                            </div>
+                        </div>
+                        <div className="col col-lg-6">
+                            {pokemon.types.map((type, i)=>{
+                                return (
+                                    <div className="poketype alert alert-warning" role="alert" key={i}> Tipo: {type.type.name}</div>
+                                )
+                            })}
+                            {pokemon.abilities.map((ability, i)=>{
+                                return(
+                                    <div className="pokeability alert alert-success" role="alert" key={i}>Habilidades: {ability.ability.name}</div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                </div> || <div className="alert alert-primary" role="alert">Carregando... </div>
+            }    
           </div>
-          <div className="pokemon-card col-lg-4">
-          <img className="rounded-circle" src={charmanter} width="140" height="140" />
-            <h2>Título</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-            <button type="button" className="btn btn-sm btn-outline-secondary">Ver mais detalhes</button>
-          </div>
-          <div className="pokemon-card col-lg-4">
-             <img className="rounded-circle" src={squirtle} width="140" height="140" />
-           <h2>Título</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <button type="button" className="btn btn-sm btn-outline-secondary">Ver mais detalhes</button>
-          </div>
-        </div>
-        </div>
-        </cards>        
-        
-        
         )
     }
 }

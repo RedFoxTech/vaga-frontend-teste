@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.png';
+import React, {Component} from 'react';
 import Navbar from '../src/components/Navbar/Navbar';
-import Pesquisa from '../src/components/Pesquisa/Pesquisa';
-import Cards from '../src/components/Cards/Cards';
+import Banner from '../src/components/Banner/Banner';
+
 import Footer from '../src/components/Footer/Footer';
 import Lista from '../src/components/Lista/Lista';
+
 import './App.css';
 
+class App extends Component{
 
-function App() {
-  return (
-    <div className="App">
-      
-        <Navbar />
-        <Pesquisa />
-        <main role="main">
-          <Cards />
-        </main>
-        <Footer />
-    </div>
-  );
+  render(){
+    return (
+      <div className="App">
+
+          <Navbar />
+          <Banner />
+
+          <main role="main">
+            <Lista />
+          </main>
+          <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;

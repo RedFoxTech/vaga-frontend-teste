@@ -1,6 +1,7 @@
 import React from 'react'
 import {Component} from 'react'
 import pokeball from './pokeball.png'
+import pokemon from './pokemon.png'
 import './navbar.css'
 
 class Navbar extends Component{
@@ -11,7 +12,7 @@ class Navbar extends Component{
                     <div className="container d-flex justify-content-between">
                       <a href="#" className="navbar-brand d-flex align-items-center">
                         <img className="rounded" src={pokeball} width="30" height="30" />
-                        <strong>POKÉMON</strong>
+                        <img className="rounded" src={pokemon} width="100" height="30" />
                       </a>
                     </div>
                   </div>    

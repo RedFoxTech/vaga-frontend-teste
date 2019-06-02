@@ -1,11 +1,13 @@
 .pokemon-card{
-    background-color: #003A70;
+    background-color: #3D7DCA;
     width: 95%;
   max-width: 300px;
   margin: 1em auto;
   border-radius: 10px;
   box-shadow: 0 10px 15px rgba(0,0,0,.12);
   font-family: 'Roboto', sans-serif;
+  padding-bottom: 20px;
+  text-transform: capitalize;
 }
 
 .card .card-image {
@@ -34,15 +36,60 @@
 
 .card .card-content {
   color: #999;
-  padding: 1.2em;
+  padding-bottom:  20px;
   font-size: 1.05em;
+  
 }
 
-.btn{
-    padding: .25rem .5rem;
-    font-size: .875rem;
-    line-height: 1.5;
-    border-radius: .5rem;
-    margin: 15px;
+
+.skills {
+  flex-basis: 55%;
 }
-    
+
+.skill {
+  background-color: #FFFFFF77;
+  border: 1px solid #AAAAAA77;
+  color: black;
+  position: relative;
+  height: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.skill > .name,
+.skill > .pp {
+  font-weight: bold;
+  padding-top:20px;
+  padding-bottom: 20px;
+  margin-top:20px;
+  color: white;
+  
+}
+
+.skill > .pp {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.skill > .description {
+  font-size: 12px;
+}
+
+.poketype{
+  font-size: 11px;
+  color: #3D7DCA;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.pokeability{
+  font-size: 11px;
+  color: #3D7DCA;;
+  font-weight: bold;
+}
+.healthy .badge {
+  display: block;
+  margin: .5rem;
+}
