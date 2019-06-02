@@ -22,7 +22,7 @@
     position: relative;
 }
 
-@keyframes modal {
+/* @keyframes modal {
     from {
         opacity: 0;
         transform: translate3d(0, -30, 0);
@@ -33,9 +33,9 @@
     }
 }
 
-.ativo .modal {
+.ativo .my__modal__container {
     animation: modal .3s forwards;
-}
+} */
 
 .my__close {
     width: 45px;
