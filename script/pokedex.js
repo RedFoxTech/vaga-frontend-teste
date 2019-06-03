@@ -1,15 +1,5 @@
 const container = document.querySelector(".container");
-// const fechar = document.querySelectorAll(".close")
 
-// for(let close of fechar){
-    
-//     close.addEventListener('click', ()=>{
-//         let modal = document.querySelector(".modal")
-//         let modalPokemon = document.querySelector(".modalPokemon")
-//         modal.classList.remove('ativo');
-//         modalPokemon.classList.remove('ativo');
-//     })
-// }
     
 fetch('https://pokeapi.co/api/v2/pokemon/')
 .then((response)=>{
@@ -81,6 +71,20 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
                                     habilidades.innerHTML = habilid.ability.name.toUpperCase() +"-"+ textoHablidade.effect;
             
                                     modalInformacoes.appendChild(habilidades);
+                                    const fechar = document.querySelectorAll(".close")
+                                    for(let close of fechar){
+                                        
+                                        close.addEventListener('click', ()=>{
+                                            let modal = document.querySelector(".modal")
+                                            let modalPokemon = document.querySelector(".modalPokemon")
+                                            modal.classList.remove('ativo');
+                                            modalPokemon.classList.remove('ativo');
+                                            modalImagem.appendChild(imagemModal).remove()
+                                            modalImagem.appendChild(nomeModal).remove()
+                                            modalInformacoes.appendChild(habilidade).remove()
+                                            modalInformacoes.appendChild(habilidades).remove()
+                                        })
+                                    }
                                 });
 
                                 
@@ -89,7 +93,6 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
                         .catch((erro)=>{
                             console.log("erro na descricao")
                         })
-
                     });
                     
                 })
