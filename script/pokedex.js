@@ -1,12 +1,10 @@
 const container = document.querySelector(".container");
-
-    
+ 
 fetch('https://pokeapi.co/api/v2/pokemon/')
 .then((response)=>{
     return response.json()
 })
 .then((data)=>{
-    console.log(data)
     data.results.forEach(pokemon => {  
         const card = document.createElement("div");
         card.setAttribute("class", "card");
@@ -38,7 +36,6 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
                     } else {
                         modal.classList.add('ativo');
                     }
-                    
                     let nomeModal = document.createElement("span")
                     nomeModal.innerHTML = pokemon.name.toUpperCase();
 
@@ -60,7 +57,6 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
                             return response.json()
                         })
                         .then((data)=>{
-                            console.log(data)
                             let descricaoUrl = [data]
 
                             descricaoUrl.forEach(habilidadePokemon => {
@@ -86,24 +82,17 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
                                         })
                                     }
                                 });
-
-                                
                             });
                         })
                         .catch((erro)=>{
-                            console.log("erro na descricao")
                         })
                     });
-                    
                 })
-                
             });
         })
         .catch((erro=>{
-            console.log("erro da url")
         }))
     });
 })
 .catch((erro)=>{
-    console.log("erro")
 })
