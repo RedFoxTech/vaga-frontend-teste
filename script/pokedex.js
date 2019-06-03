@@ -1,5 +1,16 @@
 const container = document.querySelector(".container");
+// const fechar = document.querySelectorAll(".close")
 
+// for(let close of fechar){
+    
+//     close.addEventListener('click', ()=>{
+//         let modal = document.querySelector(".modal")
+//         let modalPokemon = document.querySelector(".modalPokemon")
+//         modal.classList.remove('ativo');
+//         modalPokemon.classList.remove('ativo');
+//     })
+// }
+    
 fetch('https://pokeapi.co/api/v2/pokemon/')
 .then((response)=>{
     return response.json()
@@ -11,36 +22,79 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
         card.setAttribute("class", "card");
         container.appendChild(card);
         
-        const nomePokemon = document.createElement("h1");
+        let nomePokemon = document.createElement("h1");
         nomePokemon.innerHTML = pokemon.name.toUpperCase();
         card.appendChild(nomePokemon)
         
-        const url = pokemon.url;
+        let url = pokemon.url;
         fetch(url)
         .then((response)=>{
             return response.json()
         })
         .then((data)=>{
-            console.log(data)
-            const informacao = [data]
+            let informacao = [data]
             informacao.forEach(cada => {
-                const imagem = document.createElement("img");
+                let imagem = document.createElement("img");
                 imagem.setAttribute("src", cada.sprites.front_default)
                 card.appendChild(imagem);
 
                 card.addEventListener("click", ()=>{
-                    const modal = document.querySelector(".modal");
-        
+                    let modal = document.querySelector(".modal");
+                    let modalImagem = document.querySelector(".modal-imagem")
+                    let modalInformacoes = document.querySelector(".modal-informacoes")
+            
                     if(modal.classList.contains('ativo')) {
                         modal.classList.remove('ativo');
                     } else {
                         modal.classList.add('ativo');
                     }
+                    
+                    let nomeModal = document.createElement("span")
+                    nomeModal.innerHTML = pokemon.name.toUpperCase();
 
+                    let imagemModal = document.createElement("img");
+                    imagemModal.setAttribute("src", cada.sprites.front_shiny)
+
+                    let habilidade = document.createElement("h3");
+                    habilidade.innerHTML = "Ability:"
+                    
+                    modalImagem.appendChild(imagemModal)
+                    modalImagem.appendChild(nomeModal)
+                    modalInformacoes.appendChild(habilidade);
+
+                    cada.abilities.forEach(habilid => {
+                        
+                        let descricao = habilid.ability.url;
+                        fetch(descricao)
+                        .then((response)=>{
+                            return response.json()
+                        })
+                        .then((data)=>{
+                            console.log(data)
+                            let descricaoUrl = [data]
+
+                            descricaoUrl.forEach(habilidadePokemon => {
+                                
+                                habilidadePokemon.effect_entries.forEach(textoHablidade => {
+                                    
+                                    let habilidades = document.createElement("p");
+                                    habilidades.innerHTML = habilid.ability.name.toUpperCase() +"-"+ textoHablidade.effect;
+            
+                                    modalInformacoes.appendChild(habilidades);
+                                });
+
+                                
+                            });
+                        })
+                        .catch((erro)=>{
+                            console.log("erro na descricao")
+                        })
+
+                    });
+                    
                 })
                 
             });
-
         })
         .catch((erro=>{
             console.log("erro da url")
@@ -50,5 +104,3 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
 .catch((erro)=>{
     console.log("erro")
 })
-
-
