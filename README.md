@@ -1,8 +1,6 @@
 ## Desafio PokéAPI
 #  Como rodar o projeto
 
-Entre na pasta do projeto rode o comando npm install para instalar todas as dependências, depois de todas as dependências serem instaladas execute o comando npm start. O projeto vai compilar e subir o servidor na porta 3000...
 
-sao dois projetos um so com html css e javascript puro e um c om  framework reac 
-
+sao dois projetos um com js puro e css e html e outro com framework react o com framework react nao deu pra colocar o modules_node devido ao espaco entao vai ter que baixar a parte fazendo isso e so da npm install e depois npm start no meu git vai estar todos os arquivos do teste junto com o node_module
 
