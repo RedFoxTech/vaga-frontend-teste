@@ -1,9 +1,10 @@
 <template>
     <div class="card">
-        <p class="nome">{{nome}}</p>
+        
         <div class="div-img">
             <slot></slot>
         </div>
+        <h1 class="nome">{{nome}}</h1>
     </div>
 </template>
 <script>
@@ -15,7 +16,7 @@ export default {
     .card{
         border-radius: 5px;
         height: 280px;
-        width: 250px;
+        width: 210px;
         box-sizing: border-box;
         padding: 1%;
         font-family: 'Century Gothic';
@@ -28,19 +29,20 @@ export default {
     }
     .nome{
         margin: 0;
-        border:1px solid black;
+        margin-left: 10px;
+        /* border:1px solid black; */
         height: 20%;
         width: 100%;
-        text-align: center;
+        text-align: left;
         line-height: 50px;
         font-weight: 600;
-        font-size: 25px;
+        font-size: 20px;
     }
     .div-img{
         margin-top: 12px;
         height: 200px;
-        width: 200px;
-        border: 1px solid black;
+        width: 100%;
+        /* border-bottom: 1px solid black; */
     }
     .img{
         height: 100%;

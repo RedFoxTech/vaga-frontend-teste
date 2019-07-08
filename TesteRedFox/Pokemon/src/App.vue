@@ -9,23 +9,23 @@
       <main>
         <div class="header-conteudo">
           <h2 class="titulo">PESQUISAR POKEMON</h2>  
-          <input type="search" class="txt-pesquisa" placeholder="Buscar pokemon">
+          <input type="search" class="txt-pesquisa" placeholder="Buscar pokemon" @input="filtro =$event.target.value">
         </div>  
-        <div class="overflow-auto">
+        
             <ul class="lista-card">
-                <li  v-for="p of pokemon">
-                    <div @click="clickModal(p)">
-                        <card v-b-modal.modal-1  :nome="p.name">
-                          <img :src="p.imagem" class="img" alt="">
+                <li  v-for="pokemon of pokemonFiltro">
+                    <div @click="clickModal(pokemon)">
+                        <card v-b-modal.modal-1  :nome="pokemon.name">
+                          <img :src="pokemon.imagem" class="img" alt="">
                         </card>
                       </div>
                 </li>
               </ul>
-              <b-modal id="modal-1" title="oi">
-                  <p class="my-4"></p>
-              </b-modal>
+              <modal :nomePokemon="nome">
+                
+              </modal>
         
-          </div>
+        
             
         </main>
         </div>
@@ -33,16 +33,19 @@
 <script>
 import axios from 'axios';
 import Card from './components/shared/card/Card.vue'
-
+import Modal from './components/shared/modal/Modal.vue'
 export default{
   components:{
     card: Card,
+    modal: Modal
   },
   data () {
     return {
-      pokemon:[],
-    //  nome:[this.pokemon.name],
-      img:[]
+      pokemonList:[],
+      name:'',
+      nome:'',
+      foto:'',
+      filtro:''
      
     }
   },
@@ -52,7 +55,7 @@ export default{
       var pokemonA = []
       pok.map((p)=>{
         var objeto = {
-          'name':p.name
+          'name':p.name.toUpperCase()
         }
         axios.get(p.url).then(res => {
           objeto.imagem = res.data.sprites.front_shiny;
@@ -60,7 +63,7 @@ export default{
         });
         pokemonA.push(objeto)
       });
-      this.pokemon = pokemonA
+      this.pokemonList = pokemonA
     }); 
     // this.pokmeon.map(
     //   i =>{console.log(i)} 
@@ -72,12 +75,23 @@ export default{
    
     },
     methods: {
-      clickModal: function(p){
-        console.log(p)
+      clickModal: function(pokemon){
+        var n = pokemon.name
+        var tam = n.length
+        var nomeI = n.substring(0,1) + n.substring(1,tam).toLowerCase()
+        this.nome = nomeI      
       }
     },
     computed: {
-       
+      pokemonFiltro(){
+              if(this.filtro){
+                let exp = new RegExp(this.filtro.trim(),'i');
+                return this.pokemonList.filter(pok => exp.test(pok.name));
+                
+              }else{
+               return this.pokemonList;
+              }
+            }
     },
   
 }
@@ -93,23 +107,23 @@ export default{
   }
   .lista-card{
     list-style: none;
-    margin: 0 auto;
-    padding: 0;
+    margin: 0 40px 0 0;
+    padding: 0 auto;
     height: 100%;
     width:100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
+    border:1px solid black;
   } 
   main{
-    padding: 1px 0 1px 20px;
     width: 100%;
     height: 700px;
+    margin: 0;
   }
   .lista-card li{
-    margin: 10px;
+    margin: 10px 20px;;
   }
   .txt-pesquisa{
     height: 25px;
@@ -126,7 +140,7 @@ export default{
   }
   .menu{
     margin: 0px;
-    height: 90px;
+    height: 100px;
     width: 100%;
     display: flex;
     background-color: #A3161D;
