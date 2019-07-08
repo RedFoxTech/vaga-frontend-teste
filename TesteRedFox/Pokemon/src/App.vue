@@ -32,7 +32,7 @@
               </div>
               <section class="footer-bt">
                   <b-button class="btNP" @click="previous"><</b-button>
-                  <b-button  class="btNP" @click="next">></b-button>
+                  <b-button  class="btNP" @click="next" >></b-button>
               </section>
               
         </main>
@@ -64,15 +64,9 @@ export default{
     }
   },
   mounted () {
+    var next
     axios.get('https://pokeapi.co/api/v2/pokemon/').then(response =>{
-      var next = response.data.next
-      while(next!=null){
-        axios.get(next).then(res =>{
-          next = res.data.next;
-          this.pokemonAll = res.data.results
-          console.log(res.data.results) 
-        })
-      }
+      
       var pok = response.data.results
       this.urlNext = response.data.next
       this.urlPrev = response.data.previous
@@ -241,7 +235,7 @@ export default{
     background-position: center;
   }
   .lista-card li{
-    margin: 10px 20px;;
+    margin: 10px 20px;
   }
   .txt-pesquisa{
     height: 34px;
@@ -273,7 +267,7 @@ export default{
     height: 100%;
     width: 100%;
   }
-  /* reset */
+  /* reset CSS*/
   body, input {
   font-family: 'Century Gothic';
 	margin: 0;
