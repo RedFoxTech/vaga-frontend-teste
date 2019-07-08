@@ -11,47 +11,63 @@
           <h2 class="titulo">PESQUISAR POKEMON</h2>  
           <input type="search" class="txt-pesquisa" placeholder="Buscar pokemon" @input="filtro =$event.target.value">
         </div>  
-        
+          
             <ul class="lista-card">
                 <li  v-for="pokemon of pokemonFiltro">
                     <div @click="clickModal(pokemon)">
-                        <card v-b-modal.modal-1  :nome="pokemon.name">
-                          <img :src="pokemon.imagem" class="img" alt="">
+                        <card v-b-modal.modal-1  :nome="pokemon.name" :url="pokemon.imagem">
+                          
                         </card>
                       </div>
                 </li>
-              </ul>
-              <modal :nomePokemon="nome">
-                
-              </modal>
-        
-        
-            
+            </ul>
+              <div>
+                  <b-modal ref="my-modal" hide-footer id="modal-1" :title="nome">
+                    <img :src="foto" alt="" class="img-modal"><br>
+                    <b class="tit-modal">HABILIDADE</b>
+                    <p class="cont-modal" v-for="h of habilidade">{{h}}</p>        
+                    <b class="tit-modal">TIPO</b>
+                    <p class="cont-modal" v-for="t of tipo">{{t}}</p>        
+                    <b-button class="mt-3" variant="outline-danger"  @click="hideModal" >Fechar</b-button>
+                  </b-modal>
+              </div>
+              <section class="footer-bt">
+                  <b-button class="btNP" @click="previous"><</b-button>
+                  <b-button  class="btNP" @click="next">></b-button>
+              </section>
+              
         </main>
         </div>
 </template>
 <script>
+   
 import axios from 'axios';
 import Card from './components/shared/card/Card.vue'
-import Modal from './components/shared/modal/Modal.vue'
+var cardCli =0;
 export default{
   components:{
     card: Card,
-    modal: Modal
   },
   data () {
     return {
       pokemonList:[],
       name:'',
       nome:'',
+      habilidade:[],
+      tipo:[],
       foto:'',
-      filtro:''
+      filtro:'',
+      url:'',
+      urlNext:'',
+      urlPrev:''
      
     }
   },
   mounted () {
     axios.get('https://pokeapi.co/api/v2/pokemon/').then(response =>{ 
       var pok = response.data.results
+      this.urlNext = response.data.next
+      this.urlPrev = response.data.previous
       var pokemonA = []
       pok.map((p)=>{
         var objeto = {
@@ -60,27 +76,83 @@ export default{
         axios.get(p.url).then(res => {
           objeto.imagem = res.data.sprites.front_shiny;
           objeto.habilidade = res.data.abilities
+          objeto.tipo = res.data.types
         });
         pokemonA.push(objeto)
       });
       this.pokemonList = pokemonA
-    }); 
-    // this.pokmeon.map(
-    //   i =>{console.log(i)} 
-
-    // );
-     
-    // axios.get('https://pokeapi.co/api/v2/pokemon/').then(response => this.img = response.data.sprites.front_shiny); 
-   
-   
+      
+    });
+    
     },
     methods: {
       clickModal: function(pokemon){
         var n = pokemon.name
         var tam = n.length
         var nomeI = n.substring(0,1) + n.substring(1,tam).toLowerCase()
-        this.nome = nomeI      
+        this.nome = nomeI
+        this.foto = pokemon.imagem 
+          pokemon.habilidade.forEach(element => {
+              this.habilidade.push(element.ability.name)
+            
+          });
+          pokemon.tipo.forEach(element => {
+            this.tipo.push(element.type.name)
+          });
+      
+      },
+      hideModal() {
+        this.$refs['my-modal'].hide();
+        this.habilidade =[]
+        this.tipo=[]
+      },
+      next(){
+        axios.get(this.urlNext).then(response =>{ 
+          var pok = response.data.results
+          this.urlNext = response.data.next
+          this.urlPrev = response.data.previous
+          var pokemonA = []
+          
+          pok.map((p)=>{
+            var objeto = {
+              'name':p.name.toUpperCase()
+            }
+            axios.get(p.url).then(res => {
+              objeto.imagem = res.data.sprites.front_shiny;
+              objeto.habilidade = res.data.abilities
+              objeto.tipo = res.data.types
+            });
+            pokemonA.push(objeto)
+          });
+          this.pokemonList = pokemonA
+          
+        });
+      },
+      previous(){
+        axios.get(this.urlPrev).then(response =>{ 
+          var pok = response.data.results
+          this.urlNext = response.data.next
+          this.urlPrev = response.data.previous
+          var pokemonA = []
+          
+          pok.map((p)=>{
+            var objeto = {
+              'name':p.name.toUpperCase()
+            }
+            axios.get(p.url).then(res => {
+              objeto.imagem = res.data.sprites.front_shiny;
+              objeto.habilidade = res.data.abilities
+              objeto.tipo = res.data.types
+            });
+            pokemonA.push(objeto)
+          });
+          this.pokemonList = pokemonA
+          
+        });
+
       }
+      
+      
     },
     computed: {
       pokemonFiltro(){
@@ -92,12 +164,45 @@ export default{
                return this.pokemonList;
               }
             }
+      
     },
   
 }
 </script>
 <style>
-  
+  .btNP{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px
+
+  }
+  .footer-bt{
+    height: 70px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255,255,255,0);
+    
+  }
+  #modal-1{
+    text-align: center;
+  }
+  .mt-3{
+    float: right;
+  }
+  .img-modal{
+   width: 120px;
+   height: 120px;
+  }
+  .tit-modal{
+    font-size: 20px;
+  }
+  .cont-modal{
+    background-color: #A3161D;
+    border-radius: 10px;
+    margin: 5px 150px;
+    color:white
+  }
+
   .header-conteudo{
     width: 100%;
     height: 100px;
@@ -109,7 +214,7 @@ export default{
     list-style: none;
     margin: 0 40px 0 0;
     padding: 0 auto;
-    height: 100%;
+    height: 1200px;
     width:100%;
     box-sizing: border-box;
     display: flex;
@@ -119,8 +224,16 @@ export default{
   } 
   main{
     width: 100%;
-    height: 700px;
+    height: 1370px;
     margin: 0;
+    /* background-color: rgba(0,0,0,0.82); */
+    
+  }
+  body{
+    background-image: url('./imagem/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
   .lista-card li{
     margin: 10px 20px;;
@@ -136,6 +249,7 @@ export default{
   .titulo{
     font-weight: 600;
     text-align: center;
+    color:white
     
   }
   .menu{
@@ -143,18 +257,19 @@ export default{
     height: 100px;
     width: 100%;
     display: flex;
-    background-color: #A3161D;
+    background-color: rgba(20,20,20,0.8);
     margin-bottom: 20px;
+    
   }
   .logo{
     margin: 0 auto;
-    height: 100%;
-    width: 22%;
+    height: 80%;
+    width: 20%;
     text-align: center;
   }
   .logo-png{
-    height: 90%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
   }
   /* reset */
   body, input {

@@ -1,10 +1,13 @@
 <template>
     <div class="card">
-        
-        <div class="div-img">
-            <slot></slot>
-        </div>
-        <h1 class="nome">{{nome}}</h1>
+        <div class="comp">
+            <div class="div-img">
+                <slot></slot>
+                <img :src="url" alt="" class="img"> 
+                <h1 class="nome">{{nome}}</h1>
+                 
+            </div>
+         </div>
     </div>
 </template>
 <script>
@@ -14,19 +17,26 @@ export default {
 </script>
 <style>
     .card{
-        border-radius: 5px;
+        border-radius: 10px;
         height: 280px;
         width: 210px;
         box-sizing: border-box;
-        padding: 1%;
         font-family: 'Century Gothic';
         box-shadow: 0px 0px 2px black;
+        /* background-color: rgba(255,255,255,0.3); */
+        background-color: rgba(0,0,0,0.3);
+         color:white;
     }
+     /* .card:hover .comp{
+        background-color: rgba(255,255,255,0) 
+    } */
     .card:hover{
-        box-shadow: 0px 0px 4px;
+        box-shadow: 0px 0px  50px black;
         cursor: pointer;
-
-    }
+        /* color: white; */
+            
+    } 
+    
     .nome{
         margin: 0;
         margin-left: 10px;
@@ -47,5 +57,14 @@ export default {
     .img{
         height: 100%;
         width: 100%;
+        margin: 0;
+        border-radius: 20px;
     }
+    .comp{
+        /* background-color: rgba(0,0,0,0.82); */
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+    }
+    
 </style>
