@@ -2,13 +2,12 @@
   <div class="body">
 
       <header class="menu">
-        <section class="logo">
+        <section class="logo" >
           <img class="logo-png" src="./imagem/pokLogo.png" alt="">
         </section>
       </header>
       <main>
-        <div class="header-conteudo">
-          <h2 class="titulo">PESQUISAR POKEMON</h2>  
+        <div class="head-conteudo">
           <input type="search" class="txt-pesquisa" placeholder="Buscar pokemon" @input="filtro =$event.target.value">
         </div>  
           
@@ -50,6 +49,7 @@ export default{
   },
   data () {
     return {
+      pokemonAll:[],
       pokemonList:[],
       name:'',
       nome:'',
@@ -64,7 +64,15 @@ export default{
     }
   },
   mounted () {
-    axios.get('https://pokeapi.co/api/v2/pokemon/').then(response =>{ 
+    axios.get('https://pokeapi.co/api/v2/pokemon/').then(response =>{
+      var next = response.data.next
+      while(next!=null){
+        axios.get(next).then(res =>{
+          next = res.data.next;
+          this.pokemonAll = res.data.results
+          console.log(res.data.results) 
+        })
+      }
       var pok = response.data.results
       this.urlNext = response.data.next
       this.urlPrev = response.data.previous
@@ -203,13 +211,6 @@ export default{
     color:white
   }
 
-  .header-conteudo{
-    width: 100%;
-    height: 100px;
-    padding:  0 0 0 20px;
-    box-sizing: border-box;
-
-  }
   .lista-card{
     list-style: none;
     margin: 0 40px 0 0;
@@ -220,7 +221,7 @@ export default{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border:1px solid black;
+    
   } 
   main{
     width: 100%;
@@ -228,6 +229,10 @@ export default{
     margin: 0;
     /* background-color: rgba(0,0,0,0.82); */
     
+  }
+  .head-conteudo{
+    width: 100%;
+    text-align: center
   }
   body{
     background-image: url('./imagem/fundo.jpg');
@@ -239,25 +244,22 @@ export default{
     margin: 10px 20px;;
   }
   .txt-pesquisa{
-    height: 25px;
-    width: 700px;
+    height: 34px;
+    background-color: rgba(0,0,0,0.3);
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+    width: 600px;
     box-shadow: 0px 0px 2px;
-    padding: 5px;
+    padding: 5px; 
     margin-bottom: 20px;
-  }
-  
-  .titulo{
-    font-weight: 600;
-    text-align: center;
-    color:white
     
   }
   .menu{
-    margin: 0px;
+    margin: 20px auto;
     height: 100px;
     width: 100%;
     display: flex;
-    background-color: rgba(20,20,20,0.8);
     margin-bottom: 20px;
     
   }

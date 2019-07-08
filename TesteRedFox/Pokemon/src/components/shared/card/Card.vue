@@ -24,7 +24,7 @@ export default {
         font-family: 'Century Gothic';
         box-shadow: 0px 0px 2px black;
         /* background-color: rgba(255,255,255,0.3); */
-        background-color: rgba(0,0,0,0.3);
+        background-color: rgba(0,0,0,0.4);
          color:white;
     }
      /* .card:hover .comp{
