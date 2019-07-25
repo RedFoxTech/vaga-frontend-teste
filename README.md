@@ -34,7 +34,7 @@ Consegue sim! Só precisa saber (ou aprender agora) um pouco sobre as seguintes 
 
 Para o desafio ficar mais interessante, decidimos criar umas regras básicas:
 - No layout, você utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- Na parte de JS, deve utilizar algum framework (ex: VueJS, ReactJS, Angular...tente não usar jQuery), lembrando que VueJS é diferencial, pois utlizamos aqui na Red
+- Na parte de JS, deve utilizar algum framework (ex: VueJS, ReactJS, Angular...tente não usar jQuery), lembrando que VueJS é diferencial, pois utilizamos aqui na Red
 - Opcional: usar algum automatizador ou ferramenta de build (ex: Webpack, Grunt, Gulp...)
 
 ## Por onde começo?
