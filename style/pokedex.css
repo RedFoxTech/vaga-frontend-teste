@@ -1,0 +1,173 @@
+body{
+    margin: 0;
+    background-color: #FBFBFB;
+}
+.fundo{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.336);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeSimple .3s linear .3s forwards;
+}
+.modal{
+    display: none;
+}
+.modal.ativo{
+    display: block;
+    position: fixed;
+    z-index: 1;
+}
+.modalPokemon{
+    background-color: white;
+    width: 70%;
+    border: 5px solid rgb(37, 37, 37);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.modalPokemon.ativo{
+    display: flex;
+}
+.modal-informacoes{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.modal-informacoes p{
+    font-family: 'Hind Vadodara', sans-serif;
+}
+.modal-informacoes span{
+    font-family: 'Russo One', sans-serif;
+    font-size: 30px;
+    margin-left: 95%;
+    cursor: pointer;
+}
+.modal-informacoes h3{
+    font-family: 'Russo One', sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
+.modal-informacoes h4{
+    font-family: 'Russo One', sans-serif;
+    font-size: 15px;
+}
+.modal-informacoes p{
+    margin-bottom: 0;
+}
+.modal-imagem{
+    font-family: 'Russo One', sans-serif;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 5px solid rgba(37, 37, 37);
+    background-color: rgb(235, 235, 235);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.modal-imagem img{
+    height: 200px;
+    width: auto;
+}
+nav{
+    height: 90px;
+    background-color: rgb(46, 46, 46);
+    display: flex;
+    align-items: center;
+}
+nav a img{
+    height: 65px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+section img{
+    height: 15vh;
+}
+.card{
+    margin: 1rem;
+    background: white;
+    box-shadow: 8px 6px 8px -8px rgba(0, 0, 0, 0.815);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all .2s linear;
+    cursor: pointer;
+}
+.card:hover{
+    transform: scale(0.95);
+}
+h1 {
+    text-align: center;
+    padding: 1.5rem 2.5rem;
+    background-image: linear-gradient(120deg, #FFDE00 0%, #B3A125 100%);
+    margin: 0 0 2rem 0;
+    color: white;
+    font-family: 'Russo One', sans-serif;
+    font-weight: normal;
+}
+h1 img{
+    max-height: 150px
+}
+  
+img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+}
+.card:nth-child(2n) h1 {
+    background-image: linear-gradient(120deg, #3B4CCA 0%, #1d2665 100%);
+}
+  
+.card:nth-child(4n) h1 {
+    background-image: linear-gradient(120deg, #FF0000 0%, #CC0000 100%);
+}
+  
+.card:nth-child(5n) h1 {
+    background-image: linear-gradient(120deg, #FF0000 0%, #CC0000 100%);
+}
+@media screen and (min-width: 600px) {
+    .card {
+      flex: 1 1 calc(50% - 2rem);
+    }
+    .modalPokemon{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .modal-imagem{
+        display: none;
+    }
+}
+@media screen and (min-width: 375px) {
+    .card {
+      flex: 1 1 calc(50% - 2rem);
+    }
+    .modalPokemon{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .modal-imagem{
+        display: none;
+    }
+}
+@media screen and (min-width: 900px) {
+    .card {
+        flex: 1 1 calc(33% - 2rem);
+    }
+}
+@keyframes fadeSimple{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
