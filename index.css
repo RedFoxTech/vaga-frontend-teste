@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Signika|Roboto,');
+
+body {
+    background: linear-gradient(45deg, #C9D6FF, #E2E2E2);
+    font-family: 'Signika', sans-serif;    
+}
+
+
+.lead {
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+}
