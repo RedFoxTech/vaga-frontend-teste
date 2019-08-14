@@ -1,0 +1,42 @@
+.modal {
+  display: flex;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #f4f4f4;
+  margin: 20% auto;
+  padding: 20px;
+  width: 70%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  overflow: hidden;
+}
+
+.texto {
+  position: absolute;
+  text-align: left;
+}
+
+.texto li{
+  list-style-type: none;
+}
+
+.foto img {
+  height: 100px;
+  width: 100px;
+  float: right;
+}
+
+.closeBtn {
+  color: #ccc;
+  text-align: right;
+  font-size: 30px;
+}
+
+.closeBtn:hover, .closeBtn.focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

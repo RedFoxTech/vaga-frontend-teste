@@ -1,0 +1,9 @@
+.containerx {
+  margin-top: 20px;
+}
+
+.listagem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
