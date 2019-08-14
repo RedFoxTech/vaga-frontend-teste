@@ -1,0 +1,442 @@
+body {
+  margin: 0; }
+
+/* BARRA VERDE======================= */
+.barra-verde {
+  background-color: #00278f;
+  height: 10px;
+  width: 100vw; }
+
+/* GRID===================================== */
+.grid {
+  display: grid;
+  width: 100vw;
+  height: 800px;
+  grid-template-columns: repeat(1, 1tr);
+  grid-template-rows: repeat(5, minmax(100vw auto));
+  grid-template-areas: "header" "main" "section" "aside" "footer"; }
+
+/* HEADER:============================================= */
+header {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  grid-area: header;
+  background-image: url("../img/mapa.png");
+  height: 700px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+  header h3 {
+    width: 400px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: 'Pacifico', cursive;
+    font-size: 35pt;
+    color: black;
+    font-weight: 500;
+    text-align: start;
+    margin: 0 auto; }
+  header span {
+    color: #00278f; }
+  header p {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif; }
+
+.caixa {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%; }
+
+.txt1 {
+  width: 400px; }
+  .txt1 p {
+    color: black; }
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 200px;
+  color: white; }
+
+.rodela {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 1s; }
+  .rodela:hover {
+    background-color: #00278f; }
+  .rodela a {
+    color: white; }
+
+.imagem {
+  width: 22vw;
+  align-self: flex-end;
+  align-items: center; }
+
+.imgimg {
+  width: 100%; }
+
+/* MAIN =============================*/
+main {
+  grid-area: main;
+  height: 350px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.estruturar {
+  width: 100vw;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: none; }
+
+.circulo {
+  width: 90px;
+  height: 90px;
+  border-radius: 100px;
+  cursor: pointer;
+  background-color: #00278f;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.cx img {
+  width: 300px;
+  background-size: 100%;
+  transition: .3s;
+  cursor: pointer; }
+  .cx img:hover {
+    margin-top: -20px;
+    width: 320px; }
+
+/* SECTION============================= */
+section {
+  grid-area: section;
+  background-color: #e3e3e3;
+  width: 100vw;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.section {
+  width: 75vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.texto {
+  width: 30vw;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+  .texto h2 {
+    font-family: sans-serif;
+    font-size: 12; }
+  .texto p {
+    font-family: sans-serif; }
+
+.inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .inputs [type=text] {
+    padding: 12px;
+    width: 250px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-right: none;
+    border: 1px solid #f7f7f7; }
+    .inputs [type=text]:hover {
+      border: 1px solid #00278f; }
+  .inputs button {
+    padding: 10px;
+    width: 100px;
+    background-color: #00278f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 12pt;
+    font-weight: 500;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: .5s; }
+    .inputs button:hover {
+      background-color: #fff;
+      color: #00278f; }
+
+.video {
+  width: 600px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden; }
+
+/* ASIDE================================ */
+aside {
+  grid-area: aside;
+  width: 100vw;
+  height: 400px;
+  flex-direction: column;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.final {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; }
+
+#paragrafo1 {
+  font-family: sans-serif;
+  font-size: 11pt;
+  font-style: italic;
+  color: gray;
+  width: 50vw;
+  text-align: center; }
+
+#titulo1 {
+  font-family: sans-serif;
+  font-size: 12pt;
+  width: 50vw;
+  text-align: center;
+  margin: 0 auto; }
+
+.img6 {
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  margin: 20px; }
+  .img6 img {
+    width: 50px;
+    height: 50px; }
+
+.clara {
+  opacity: 0.5; }
+
+.titulo2 {
+  font-family: sans-serif;
+  font-size: 16pt;
+  width: 50vw;
+  text-align: center; }
+
+.paragrafo2 {
+  font-family: sans-serif;
+  font-size: 11pt;
+  font-style: italic;
+  color: gray;
+  width: 50vw;
+  text-align: center; }
+
+.social {
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px; }
+
+.icones {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .icones:hover {
+    background-color: #00278f; }
+
+/* FOOTER-================================ */
+footer {
+  grid-area: footer;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #e3e3e3; }
+  footer h1 h2 a {
+    font-family: sans-serif; }
+
+.contatos {
+  height: 90px;
+  width: 40vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2px; }
+  .contatos a {
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
+    font-size: 11pt; }
+    .contatos a:hover {
+      color: #00278f; }
+
+/* AGORA A PARTE MAIS DIFICIL DO MUNDO HAHAHA */
+/* MEDIAQUERY */
+@media (max-width: 500px) {
+  header {
+    height: auto; }
+
+  .caixa {
+    height: 400px; }
+
+  .txt1 {
+    width: 100vw; } }
+main {
+  height: 1000px; }
+
+.estruturar {
+  height: auto;
+  flex-direction: column; }
+
+section {
+  height: auto; }
+
+.video {
+  width: 100vw;
+  height: auto; }
+
+.caixa-pokemon {
+  flex-direction: column; }
+
+#delete {
+  display: none; }
+
+/* Breakpoint para phone 1000px =====================*/
+@media (max-width: 900px) {
+  header {
+    width: 100vw;
+    background-size: none;
+    background-position: none;
+    background-repeat: no-repeat;
+    background-attachment: none;
+    height: auto; }
+
+  .caixa {
+    justify-content: center;
+    flex-direction: column;
+    width: auto; }
+
+  .imagem {
+    width: 50px;
+    margin-right: 30px; }
+
+  /* ESTRUTURA MAIN */
+  main {
+    height: 1000px; }
+
+  .estruturar {
+    display: flex; }
+
+  /* ESTRUTURA SECTION */
+  .section {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+
+  .texto {
+    width: 80vw;
+    height: auto; }
+
+  .inputs [type=text] {
+    width: 150px; }
+
+  /* ESTRUTURA ASIDE */
+  aside {
+    height: 600px; }
+
+  #paragrafo1 {
+    width: 90vw; }
+
+  .img6 {
+    width: 99vw;
+    display: table-row; }
+
+  aside .social {
+    width: 40vw; }
+
+  /* ESTRUTURA FOOTER */
+  .contatos {
+    width: 90vw; }
+
+  footer {
+    width: 100vw; } }
+/* Curiosidades ===================================== */
+/* Breakpoint para tablets 1200px =====================*/
+@media (max-width: 1300px) {
+  header {
+    width: 100vw;
+    background-size: none;
+    background-position: none;
+    background-repeat: no-repeat;
+    background-attachment: none;
+    height: auto; }
+
+  .caixa {
+    width: 100vw;
+    flex-direction: space-around; }
+
+  .imagem {
+    width: 30vw; }
+
+  /* ESTRUTURA SECTION */
+  .section {
+    width: 100vw; } }
+/* Breakpoint para notbooks 1600px =====================*/
+@media (max-width: 1600px) {
+  header {
+    width: 100vw;
+    background-size: none;
+    background-position: none;
+    background-repeat: no-repeat;
+    background-attachment: none;
+    height: auto; }
+
+  .caixa {
+    width: 100vw;
+    flex-direction: space-around; }
+
+  .imagem {
+    width: 30vw; }
+
+  /* estruturando o section */
+  /* ESTRUTURANDO O ASIDE */
+  aside {
+    height: 700px; }
+
+  #paragrafo1 {
+    width: 90vw; }
+
+  .img6 {
+    width: 80vw;
+    display: table-row; }
+
+  .social {
+    width: 20vw; } }
+#info {
+  height: 100vh;
+  width: 100vw; }
+
+/*# sourceMappingURL=style.css.map */

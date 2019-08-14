@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script  src="js/vue.min.js"></script>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lista.css">
+    <title>Pokemon</title>
+</head>
+
+<body>
+
+    
+
+    <div id="app">
+        <div class="container">
+            <h1 class="mt-3">{{title}}</h1>
+
+            <table class="mt-5 table">
+                <thead>
+                    <tr>
+                        <tr>ID:</tr>
+                        
+    
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr v-for="sale in sales">
+                        <td>{{sale.id}}</td>
+                        <td>{{sale.name}}</td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+
+            data: {
+                title: "Pokemon",
+                sales: null
+            },
+
+            methods:{
+                getSales(){
+                    fetch('/data/sales.json')
+                        .then(resp => resp.json())
+                        .then(data => this.sales = data)
+                }
+            },
+
+            mounted() {
+                this.getSales()
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+
+
