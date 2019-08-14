@@ -1,0 +1,13 @@
+attrs==18.1.0
+certifi==2018.4.16
+chardet==3.0.4
+coverage==4.5.1
+Django==2.2
+drf-generators==0.4.0
+hypothesis==3.66.0
+idna==2.7
+pokebase==1.2.0
+pytz==2019.1
+requests==2.19.1
+sqlparse==0.3.0
+urllib3==1.23
