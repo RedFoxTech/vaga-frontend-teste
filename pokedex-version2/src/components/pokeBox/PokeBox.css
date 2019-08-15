@@ -1,0 +1,22 @@
+.poke-box {
+  font-family: 'Montserrat', sans-serif;
+  width: 120px;
+  height: 120px;
+  margin: 10px;
+  background-color: #FFF;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16);
+}
+
+.poke-box:hover{
+  background: rgb(151, 23, 23);
+  color: #fff;
+  transform: translateY(0);
+  opacity: 0.8;
+  transition: 0.5s;
+  text-align: center;
+  transition-delay: 0.1s;
+  transform: rotate(2deg);
+}

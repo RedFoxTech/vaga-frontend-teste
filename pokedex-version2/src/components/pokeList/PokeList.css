@@ -1,0 +1,15 @@
+.poke-list {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  height: 80%;
+  padding: 10px;
+  margin-right: 10px;
+  margin-left: 5%;
+  background-color: #BFF9FF;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  overflow: scroll;
+}
