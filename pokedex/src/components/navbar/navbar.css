@@ -1,0 +1,31 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    background: #399494;
+    -webkit-mask-position: fixed;
+}
+
+.navLogo{
+    width: 13%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.nav-lista{
+    display: flex; 
+    justify-content: space-evenly;
+    list-style: none; 
+    margin: 0 auto;
+}
+
+.nav-item:hover{
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.5s; 
+}
+
+.nav-item{
+    padding:20px;
+}

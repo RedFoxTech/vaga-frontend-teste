@@ -1,16 +1,34 @@
 * {
     box-sizing: border-box;
   }
-  
+
   .comentario {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     border-radius: 10px;
     background-color: #f3f3f3;
     padding: 25px;
-    display: flex;
+    width: 17%;
     max-width: 960px;
     margin: 50px auto;
     border-style: dashed;
+    text-align: center;
+  }
+
+  .comentario:hover{
+    background: rgb(151, 23, 23);
+    color: #fff;
+    transform: translateY(0);
+    opacity: 0.8;
+    transition: 0.5s;
+    text-align: center;
+    transition-delay: 0.1s;
+    transform: rotate(5deg);
+  }
+
+  .comentario__perfil:hover{
+    width: 300px;
+    height:200px;
+    transition: 0.5s;
   }
   
   .comentario__perfil {
