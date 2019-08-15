@@ -2,7 +2,7 @@
     box-sizing: border-box;
   }
 
-  .comentario {
+  .card {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     border-radius: 10px;
     background-color: #f3f3f3;
@@ -14,7 +14,7 @@
     text-align: center;
   }
 
-  .comentario:hover{
+  .card:hover{
     background: rgb(151, 23, 23);
     color: #fff;
     transform: translateY(0);
@@ -25,29 +25,22 @@
     transform: rotate(5deg);
   }
 
-  .comentario__perfil:hover{
+  .card__perfil:hover{
     width: 300px;
     height:200px;
     transition: 0.5s;
   }
   
-  .comentario__perfil {
+  .card__perfil {
     width: 100%;
     max-width: 200px;
     margin-right: 50px;
     border-radius: 10px;
   }
   
-  .comentario__nome {
+  .card__nome {
     margin: 0;
     font-size: 24px;
-  }
-  
-  .comentario__subtitulo {
-    margin: 0;
-    margin-bottom: 15px;
-    font-weight: normal;
-    font-size: 20px;
   }
   
   .comentario hr {

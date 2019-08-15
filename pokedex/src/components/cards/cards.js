@@ -6,12 +6,12 @@ import './cards.css'
 class Card extends React.Component {
     render() {
       return (
-        <div className="comentario" id="comentario">
-          <img className="comentario__perfil" src={this.props.imagem} />
+        <div className="card" id="card">
+          <img className="card__perfil" src={this.props.imagem} />
           <div>
-            <h2 className="comentario__nome">{this.props.nome}</h2>
+            <h2 className="card__nome">{this.props.nome}</h2>
             <hr />
-            <p>{this.props.comentario}</p>
+            <p>{this.props.habilidade}</p>
           </div>
         </div>
       )
