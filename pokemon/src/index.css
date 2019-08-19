@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("./imagens/fundo3.png"); 
+  background-size: cover;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000, endColorstr=#000000)";
+}
