@@ -1,0 +1,80 @@
+body{
+    min-height: 1000px;
+}
+
+.menu{
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.logotipo{
+    max-width: 100px;
+    margin-top: 12px;
+}
+
+.container-cab{
+    color: aliceblue;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 3%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.cabecalho{
+    width: 100%;
+    min-height: 300px;
+    max-height: 800px;
+    padding: 3%;
+    background-image: url('../_img/background_poke.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: 100%;
+    margin-bottom: 5%;
+}
+
+.listaPokemons{
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 10%;
+}
+.nomePokemon{
+    color: black;
+}
+
+.pokedex{
+    text-align: justify;
+}
+
+.poke-box{
+    padding: 5%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.img-pokedex{
+    text-align: center;
+}
+
+.desc-treinador{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.treinadores figure figcaption p{
+    background-color:rgba(232, 171, 12, 0.5);
+    padding: 3%;
+    font-size: 1.5em; 
+    text-align: justify;
+}
+
+.treinadores{
+    margin-bottom: 0;
+}
+
+footer{
+    margin-top: -5px;
+    background-color: black;
+    padding: 3%;
+    text-align: center;
+    color: white;
+}

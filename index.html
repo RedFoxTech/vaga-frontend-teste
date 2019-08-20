@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Minha Pokedex - Lucas Nogueira</title>
+    <!--ICONE-->
+    <link rel="icon" href="_img/pokeball.png" type="image/x-icon" />
+    <!--MATERIALIZE CSS-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--MEU CSS-->
+    <link rel="stylesheet" href="_css/myStyle.css">
+
+    <!--Scripts JS-->
+    <script src="api.js"></script>
+</head>
+<body>
+    <nav style="background-color: #302828;">
+        <div class="menu nav-wrapper" >
+          <a href="#" class="brand-logo"><img class="logotipo" src="_img/pokeball.png" alt="pokebola"></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#Pokemons">Pokemons</a></li>
+            <li><a href="#Pokedex">Pokedex</a></li>
+            <li><a href="#Insignias">Insignias</a></li>
+            <li><a href="#Treinadores">Treinadores</a></li>
+          </ul>
+        </div>
+      </nav>
+      <header class="cabecalho">
+          <div class="container-cab">
+              <h2>Temos que pegar!</h2>
+              <h6 style="margin-bottom: 10%;">Bem vindo a Pokeapplet</h6>
+              <a class="waves-effect waves-light btn" href="#Pokemons">Veja pokemons</a>
+          </div>
+      </header>
+      <section class="container listaPokemons">
+            <div class="row">
+                <div class="col titulo s6">
+                    <h4 id="Pokemons">Pokemons</h4>
+                </div>
+                <div class="col s5">
+                    <form action="GET" id="pokeBusca">
+                        <input type="text">
+                        <input type="submit" name="buscar" id="btnBuscar" value="Procure">
+                    </form>
+                </div>
+            </div>
+            <div class="lista">
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="_img/pikachu.jpg" class="responsive-img">
+                                <span class="card-title blue darken-4">Pikachu</span>
+                            </div>
+                            <div class="card-content">
+                                <p>Descrição: Este é um pokemon</p>
+                            </div>
+                            <div class="card-action">
+                                    <a class="waves-effect waves-light btn">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="_img/charizard.png" class="responsive-img">
+                                <span class="card-title blue darken-4">Charizard</span>
+                            </div>
+                            <div class="card-content">
+                                <p>Descrição: Este é um pokemon</p>
+                            </div>
+                            <div class="card-action">
+                                    <a class="waves-effect waves-light btn">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="card pokecard">
+                            <div class="card-image">
+                                <img src="_img/buba.png" class="responsive-img">
+                                <span class="card-title blue darken-4">Bubasauro</span>
+                            </div>
+                            <div class="card-content">
+                                <p>Descrição: Este é um pokemon</p>
+                            </div>
+                            <div class="card-action">
+                                    <a class="waves-effect waves-light btn">Leia mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="pagination">
+                <li class="disabled"><a href="#!"><i class="material-icons"><</i></a></li>
+                <li class="active"><a href="#!">1</a></li>
+                <li class="waves-effect"><a href="#!">2</a></li>
+                <li class="waves-effect"><a href="#!">3</a></li>
+                <li class="waves-effect"><a href="#!">4</a></li>
+                <li class="waves-effect"><a href="#!">5</a></li>
+                <li class="waves-effect"><a href="#!"><i class="material-icons">></i></a></li>
+            </ul>
+      </section>
+      <section class="pokedex listaPokemons" id="Pokedex">
+            <div class="row">
+                    <div class="col s12 m4 img-pokedex">
+                            <figure>
+                                <figcaption>
+                                    <h3>Acesse sua Pokedex</h3>
+                                </figcaption>
+                                <img class="responsive-img" src="_img/pokedex.png" alt="pokedex">
+                            </figure>
+                        </div>
+                <div class="col s12 m4 img-pokedex">
+                        <figure>
+                            <figcaption>
+                                <h3>Conquiste insígnias</h3>
+                            </figcaption>
+                            <img class="responsive-img" src="_img/insignias.png" alt="insignias">
+                        </figure>
+                    </div>
+                <div class="col s12 m4 img-pokedex">
+                    <figure>
+                        <figcaption>
+                            <h3>Enfrente Líderes Treinadores</h3>
+                        </figcaption>
+                        <img class="responsive-img" src="_img/andre.png" alt="pokedex" style="max-height: 200px;">
+                    </figure>
+                </div>
+            </div>
+      </section>
+      <section class="row treinadores listaPokemons" id="Treinadores">
+            <figure class="col s12 m12" style="margin-bottom: 0;">
+                <h2>Torne-se você também um treinador!</h2>
+                <figcaption>
+                    <p>Seu objetivo é alcançar dois objetivos (na maioria dos jogos de Pokémon): capturar todas as espécies de
+                        Pokémon disponíveis na região fictícia onde o jogo está configurado e completar a informação de todos os
+                        Pokémon no Pokédex.</p>
+                </figcaption>
+                <img class="responsive-img" src="_img/treinadores_gilr_boy.jpg" alt="treinador-pokemon">
+            </figure>          
+      </section>
+      <footer>
+          <p>Todos os Direitos reservados &copy; LUCAS NOGUEIRA, 2018.</p>
+      </footer>
+</body>
+</html>
