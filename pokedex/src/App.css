@@ -1,0 +1,24 @@
+.navbar {
+  background-color: #d74643;
+  color: #ffffff;
+  height: 50px;
+  margin-bottom: 0px;
+}
+
+.page_search {
+  background-color: #d74643;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-header {
+  text-align: center;
+  background-color: #d74643;
+}
