@@ -5,13 +5,11 @@
   margin-bottom: 20px;
 }
 
-.page_search {
-  background-color: #ef5350;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #fff;
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:visited {
+  background-color: #ef5350 !important;
 }
 
 .card {

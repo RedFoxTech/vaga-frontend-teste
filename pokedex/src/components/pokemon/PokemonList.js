@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 import api from "../../services/Api";
 
@@ -63,13 +62,7 @@ export default class PokemonList extends Component {
     const { pokemon } = this.state;
 
     return (
-      <div>
-        <button type="button" onClick={this.handlePrevPage}>
-          Anterior
-        </button>
-        <button type="button" onClick={this.handleNextPage}>
-          Próxima
-        </button>
+      <div class="mt-5">
         {pokemon ? (
           <div className="row">
             {pokemon.map(pokemon => (
@@ -83,6 +76,14 @@ export default class PokemonList extends Component {
         ) : (
           <h1>Loading</h1>
         )}
+        <div class="row d-flex justify-content-center mb-5">
+          <button class="btn btn-secondary m-2" onClick={this.handlePrevPage}>
+            Anterior
+          </button>
+          <button class="btn btn-secondary m-2" onClick={this.handleNextPage}>
+            Próxima
+          </button>
+        </div>
       </div>
     );
   }
