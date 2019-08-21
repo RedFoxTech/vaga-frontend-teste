@@ -1,12 +1,12 @@
 .navbar {
-  background-color: #d74643;
-  color: #ffffff;
+  background-color: #ef5350;
+  color: #ef5350;
   height: 50px;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 
 .page_search {
-  background-color: #d74643;
+  background-color: #ef5350;
   padding-bottom: 10px;
   padding-top: 10px;
   margin-bottom: 20px;
@@ -16,6 +16,7 @@
 
 .card {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 15px;
 }
 
 .card:hover {
@@ -27,7 +28,7 @@
 
 .card-header {
   text-align: center;
-  background-color: #fff;
+  background-color: #ef5350;
 }
 
 .badge {
