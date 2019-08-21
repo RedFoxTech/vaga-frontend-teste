@@ -9,7 +9,8 @@ export default class PokemonList extends Component {
     currentPage: 1,
     pageCount: 0,
     limit: 12,
-    pokemon: []
+    pokemon: [],
+    pokemonInput: ""
   };
 
   componentDidMount() {
@@ -17,7 +18,7 @@ export default class PokemonList extends Component {
   }
 
   loadPokemons = async (offset = 0) => {
-    const { pageCount, limit, url } = this.state;
+    const { pageCount, limit } = this.state;
     const response = await api.get("pokemon", {
       params: {
         offset,
@@ -58,31 +59,70 @@ export default class PokemonList extends Component {
     this.setState({ currentPage: nextPage });
   };
 
+  loadSpecificPokemon = async e => {
+    e.preventDefault();
+    const { pokemonInput } = this.state;
+    if (!pokemonInput) return;
+
+    const response = await api.get(`pokemon/${pokemonInput}`);
+    const pokemon = [response.data.species];
+
+    this.setState({
+      pokemon: pokemon,
+      pokemonInput: ""
+    });
+  };
+
+  handleInput = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   render() {
-    const { pokemon } = this.state;
+    const { pokemon, pokemonInput, currentPage, pageCount } = this.state;
 
     return (
-      <div class="mt-5">
-        {pokemon ? (
-          <div className="row">
-            {pokemon.map(pokemon => (
-              <PokemonCard
-                key={pokemon.name}
-                name={pokemon.name}
-                url={pokemon.url}
-              />
-            ))}
+      <div>
+        <form class="col-lg-6 offset-lg-3" onSubmit={this.loadSpecificPokemon}>
+          <div class="row justify-content-center p-1">
+            <input
+              onChange={this.handleInput}
+              class="form-control"
+              type="text"
+              name="pokemonInput"
+              value={pokemonInput}
+              placeholder="Pokemon name"
+            />
+            <button type="submit" class="btn btn-secondary m-1">
+              Search
+            </button>
           </div>
-        ) : (
-          <h1>Loading</h1>
-        )}
-        <div class="row d-flex justify-content-center mb-5">
-          <button class="btn btn-secondary m-2" onClick={this.handlePrevPage}>
-            Anterior
-          </button>
-          <button class="btn btn-secondary m-2" onClick={this.handleNextPage}>
-            Próxima
-          </button>
+        </form>
+
+        <div class="mt-5 text-center">
+          {pokemon ? (
+            <div className="row">
+              {pokemon.map(pokemon => (
+                <PokemonCard
+                  key={pokemon.name}
+                  name={pokemon.name}
+                  url={pokemon.url}
+                />
+              ))}
+            </div>
+          ) : (
+            <h1>Loading</h1>
+          )}
+          <strong class="text-secondary">
+            Página {currentPage} de {pageCount}
+          </strong>
+          <div class="row d-flex justify-content-center mb-5">
+            <button class="btn btn-secondary m-2" onClick={this.handlePrevPage}>
+              Anterior
+            </button>
+            <button class="btn btn-secondary m-2" onClick={this.handleNextPage}>
+              Próxima
+            </button>
+          </div>
         </div>
       </div>
     );

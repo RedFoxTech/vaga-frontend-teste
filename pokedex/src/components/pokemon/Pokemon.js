@@ -328,7 +328,7 @@ export default class Pokemon extends Component {
                 </div>
                 <div className="row align-items-center">
                   <div className={`col-12 col-md-${this.state.statTitleWidth}`}>
-                    Sp Atk
+                    Special Attack
                   </div>
                   <div className={`col-12 col-md-${this.state.statBarWidth}`}>
                     <div className="progress">
@@ -350,7 +350,7 @@ export default class Pokemon extends Component {
                 </div>
                 <div className="row align-items-center">
                   <div className={`col-12 col-md-${this.state.statTitleWidth}`}>
-                    Sp Def
+                    Special Defense
                   </div>
                   <div className={`col-12 col-md-${this.state.statBarWidth}`}>
                     <div className="progress">
