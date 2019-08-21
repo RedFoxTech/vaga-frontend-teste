@@ -8,9 +8,6 @@ export default class extends Component {
         <nav className="navbar">
           <a>Pokedex</a>
         </nav>
-        <div className="page_search">
-          <input type="text" placeholder="Enter pokemon name" value="" />
-        </div>
       </div>
     );
   }
