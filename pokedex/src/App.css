@@ -1,0 +1,34 @@
+.navbar {
+  background-color: #ef5350;
+  color: #ef5350;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:visited {
+  background-color: #ef5350 !important;
+}
+
+.card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 15px;
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.card-body {
+  text-align: center;
+}
+
+.card-header {
+  text-align: center;
+  background-color: #ef5350;
+}
+
+.badge {
+  color: #fff;
+}
