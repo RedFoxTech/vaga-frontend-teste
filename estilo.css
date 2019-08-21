@@ -1,0 +1,18 @@
+body{
+    background-image: url(../redfox/fundo1.jpg);
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+
+    text-align: center;
+}
+
+.personagem{
+    text-align: center;
+    margin-left: 250px;
+
+}
