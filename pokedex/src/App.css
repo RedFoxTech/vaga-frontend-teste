@@ -27,5 +27,9 @@
 
 .card-header {
   text-align: center;
-  background-color: #d74643;
+  background-color: #fff;
+}
+
+.badge {
+  color: #fff;
 }

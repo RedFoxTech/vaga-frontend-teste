@@ -38,14 +38,19 @@ export default class PokemonCard extends Component {
           <div className="card">
             <h5 className="card-header">{this.state.pokemonIndex}</h5>
             <img
-              className="card-img-top rounded mx-auto mt-2"
+              className="card-img-top rounded mx-auto mt-2 w-50"
               onLoad={() => this.setState({ imageLoading: false })}
               onError={() => this.setState({ tooManyRequests: true })}
               src={this.state.imageUrl}
             />
             <div className="card-body">
-              <h5 className="card-title">{this.state.name}</h5>
-              <p className="card-text">This is a ... pokemon</p>
+              <h6 className="card-title">
+                {this.state.name
+                  .toLowerCase()
+                  .split("-")
+                  .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+                  .join("  ")}
+              </h6>
             </div>
           </div>
         </StyledLink>
