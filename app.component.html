@@ -1,0 +1,69 @@
+
+
+
+<div id="containerPokemon">
+  <div id="pokedex">
+      <div id="trainer">
+          <div class="icone"></div>
+      </div>
+      <p>Treinador</p>
+      <button type="button" data-toggle="modal" data-target="#ModalLongoExemplo">
+        Insignias Pokemon
+      </button>
+  </div>
+
+  <div id="pokemonInfo">
+      <div class="HeaderPokemon">
+          <p>Pokedex - Treinador Pokemon [Análises]</p>
+      </div>
+      <div class="infoPokemon">
+          <h2 id="nomedoPokemon">
+             Nome do pokemon :
+          </h2>
+
+          <br>
+          <p id="descpokemon">
+              Descrição Pokemon
+          </p>
+      </div>
+      <div class="imgPokemon">
+          <img src="" alt="" id="imgDoPokemon">
+      </div>
+
+      <div class="linhaquebra"></div>
+
+      <div class="listaPokemon">
+
+          <div class="searchPokemon">
+              <label for="">Nome Pokémon :</label>
+              <input type="text" id="nomePokemon" placeholder="Ex: Pichu" v-model="message">
+              <button (click)="searchdopokemon()">Ok</button>
+          </div>
+
+            <div class="listagemPokemons" id="listagemPokemons">
+                <!-- Pokemons -->
+            </div>
+
+      </div>
+  </div>
+</div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TituloModalLongoExemplo">Insignias Pokemon</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="https://http2.mlstatic.com/caixa-de-insignias-pokemon-liga-de-kanto-D_NQ_NP_820615-MLB25252318384_122016-F.jpg" alt=""style="width: 100%; height: 100%;">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
