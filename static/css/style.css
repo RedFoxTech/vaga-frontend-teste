@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, arial, freesans, clean, sans-serif;
+    background: url("../images/background.png") no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+nav {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    background: rgba(87, 76, 79, 0.3);
+}
+
+.social {
+    float: right;
+    margin-top: 8px;
+    margin-right: 40px;
+}
+
+.social a img {
+    line-height: 30px;
+}
+
+.content {
+    width: 80%;
+    margin: 2% auto;
+}
+
+.description {
+    color: #fff;
+    padding: 30px;
+    height: 1160px;
+    border-radius: 10px;
+    background-color: rgba(87, 76, 79, 0.3);
+}
+
+footer {
+    color: #fff;
+    clear: both;
+    width: 80%;
+    text-align: center;
+    background-color: rgba(87, 76, 79, 0.3);
+    margin: 10px auto;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+footer p {
+    margin: 1px;
+}
