@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Desafio Pokémon</title>
+    <meta name="author" content="Renan Augusto dos Santos">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="css/jumbotron.css">
+    <!--CSS Personalizado-->
+    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <!--CSS font awesome para spinner-->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="w">
+            <img src="./images/International_Pokémon_logo.png" style="width:40%; border-radius:0%; margin-left: 30%; margin-bottom: 5%">
+            <div id="app">
+
+                <h1 class="display-2" style="color:#ffde00; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: #3b4cca; letter-spacing: 3px;">Busque informações sobre os Pokémons que mais gosta</h1>
+                <p class="lead">Digite o nome ou número do Pokémon</p>
+                <p class="subtitle">Use a pesquisa avançada para explorar mais.</p>
+                <div class="navbar-form navbar-left" role="search ">
+                    <div class="input-group ">
+                        <input type="text" placeholder="Nome ou número do Pokémon..." class="form-control" v-model='pokemonName'>
+                        <div class="input-group-btn ">
+                            <button class="btn btn-danger" data-toggle="modal" data-target="#pokeModal" v-on:click="getpokemonsbyname" type="submit ">
+                                <i class="fa fa-dot-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ghapidata" class="clearfix"></div>
+                <div class="container-fluid">
+                    <table id="allPokemons" class="datatable table table-hover table-bordered" width="100%" cellspacing="10">
+                        <caption>
+                            <h2 style="font-family:'Pokemon Solid'; color:#ffde00; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: #3b4cca; letter-spacing: 3px;">Lista de Pokémons</h2>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="th ">Foto</th>
+                                <th class="th">Nome</th>
+                                <th class="th">Detalhes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="body">
+                            <tr v-for="pokemon in allpokemons">
+                                <td>
+                                    <img :src="pokemon.sprites.front_default" width="100" height="100"></img>
+                                </td>
+                                <td class="text-uppercase" style="font-size: 20px">
+                                    {{pokemon.name}}
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pokeModal" v-on:click="getpokemons(pokemon.name)" style="border-radius: 15px;">
+                                        <i class="fa fa-dot-circle"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tbody>
+                    </table>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="pokeModal" tabindex="-1" role="dialog" aria-labelledby="pokeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content modal-popout-bg" style="border-radius:20px;">
+                            <div class="modal-header">
+                                <img src="./images/International_Pokémon_logo.png" style="width:20%; border-radius:0%; margin-left: 40%;">
+
+                                <button type="button" class="close btn btn-danger" data-dismiss="modal" aria-label="Close">
+                                    <i class="fa fa-times-circle-o" style="font-size:35px;"></i>
+                                </button>
+
+                            </div>
+                            <nav class="jumbo-nav">
+                                <div class="navigation-wrapper">
+                                    <div class="modal-body" style="padding:20px">
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="pokeball-wrapper">
+                                                    <img src="./images/pokeball.png" />
+                                                </div>
+                                                <div class="enhanced">
+
+                                                    <h2 class="text-capitalize" style="font-family:'Pokemon Solid'; color:#ffde00; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: #3b4cca; letter-spacing: 3px;">{{alldetails.name}}</h2>
+                                                    <img v-if="alldetails.sprites != null" class="pokemon small" :src="alldetails.sprites.front_default" />
+                                                    <img v-else class="pokemon small" src="./images/pokeball.png" />
+
+                                                    <p><strong>Id: </strong>{{alldetails.id}}</p>
+                                                    <p><strong>Experiência: </strong>{{alldetails.base_experience}}</p>
+                                                    <p><strong>Peso: </strong>{{alldetails.weight}}</p>
+                                                    <p><strong>Altura: </strong>{{alldetails.height}}</p>
+                                                    <p>
+                                                        <button class="btn btn-danger btn-md" style="margin-left:32px;border-radius: 15px;" data-toggle="collapse" data-target="#detalhes">
+                                                            <i class="fa fa-dot-circle"></i>
+                                                        </button>
+                                                    </p>
+
+                                                    <div id="detalhes" class="collapse" style="overflow-y: scroll !important;max-height: 120px !important;">
+                                                        <h2><strong style="font-family:'Pokemon Solid'; color:#ffde00; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: #3b4cca; letter-spacing: 3px;">Estatísticas</strong></h2>
+                                                        <ul class="list-group" v-for="stats in alldetails.stats" style="margin-bottom:0%">
+
+                                                            <li class="list-group-item list-group-modal text-uppercase" style="font-size: 12px; padding-top: 8px; height:30px;">
+                                                                {{stats.stat.name}}
+                                                                <span class="badge badge-primary badge-pill" style="margin-left: 10px;margin-top:-10; background-color: #d9534f; font-size: 12px;">{{stats.base_stat}}</span>
+
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </nav>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootbox.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script type="text/javascript">
+        app = new Vue({
+            el: '#app',
+            data: {
+                title: "Pokemon",
+                pokemonList: [],
+                alldetails: [],
+                allpokemons: [],
+                pokemonName: null,
+                quantity: 1,
+                limit: 20
+            },
+
+            methods: {
+
+                getpokemonsbyname() {
+                        console.log(this.pokemonName);
+                        if (this.pokemonName) {
+                            fetch("https://pokeapi.co/api/v2/pokemon/" + this.pokemonName.toLowerCase())
+                                .then(response => response.json())
+                                .then((data) => {
+                                    this.alldetails = data;
+                                    this.pokemonName = null;
+                                })
+                        }
+                    },
+
+                    getpokemons(name) {
+                        console.log(name);
+                        if (name) {
+                            fetch("https://pokeapi.co/api/v2/pokemon/" + name.toLowerCase())
+                                .then(response => response.json())
+                                .then((data) => {
+                                    this.alldetails = data;
+                                })
+                        }
+                    },
+
+                    geturl(url) {
+                        console.log(url);
+                        fetch(url)
+                            .then(response => response.json())
+                            .then((data) => {
+                                this.alldetails = data;
+                            })
+                    },
+
+                    loadpokemons(url) {
+                        //console.log(url);
+                        fetch(url)
+                            .then(response => response.json())
+                            .then((data) => {
+                                //this.allpokemons = data;
+                                this.allpokemons.push(data);
+                                //console.log(this.allpokemons);
+                            })
+                            .finally(function() {
+                                console.log("Acabou");
+                            })
+                    },
+
+                    lazyloading(quantity) {
+                        this.quantity = quantity;
+                        let quantityAux = this.quantity - 1;
+                        let url = null;
+                        if (quantityAux == 0)
+                            url = "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=" + (this.limit * this.quantity);
+                        else
+                            url = "https://pokeapi.co/api/v2/pokemon/?offset=" + ((this.limit * quantityAux) + 1) + "&limit=" + (this.limit * this.quantity);
+
+                        console.log(url);
+                        fetch(url)
+                            .then(response => response.json())
+                            .then((data) => {
+
+                                console.log(quantity + " - " + this.allpokemons.length)
+                                this.pokemonList = data.results;
+                                this.pokemonList.map((pokemon) => {
+                                    this.loadpokemons(pokemon.url);
+                                });
+
+                                if (quantity > 1)
+                                    $('#allPokemons').find('#body').append("<tr><td id='pagina' style='background-color:red;'>" + quantity + "</td></tr>");
+                            })
+                    }
+
+            },
+
+            mounted() {
+                //this.lazyloading(this.quantity);
+            }
+        })
+    </script>
+
+    <!-- Carregamento lazy-->
+    <script type="text/javascript">
+        $(function() {
+
+            var docCached = $(document);
+            var currLeng = 1;
+            var winCached = $(window);
+
+            adicionaConteudo();
+
+            //Adiciona conteudo scroll qdo chega final pagina
+            function adicionaConteudo() {
+                //Libera evento scroll
+                dettachScrollEvent();
+
+                //Loading para dar tempo de carregar dados na tabela
+                setTimeout(function() {
+                    for (var i = currLeng; i < currLeng + 1; i++)
+                        app.lazyloading(i);
+                    currLeng = i;
+                    console.log("loading scroll infinito");
+                    attachScrollEvent();
+                }, 500);
+            }
+
+            //desatacha scroll 
+            function dettachScrollEvent() {
+                winCached.unbind('scroll');
+            }
+
+            //atacha scroll 
+            function attachScrollEvent() {
+                winCached.scroll(function() {
+                    if (winCached.scrollTop() + winCached.height() > docCached.height() - 300)
+                        adicionaConteudo();
+
+                });
+            }
+
+        });
+
+        $('#pokeModal').on('shown.bs.modal', function() {
+            $('#detalhes').collapse('hide');
+        })
+    </script>
+
+</body>
+
+</html>
