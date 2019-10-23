@@ -13,4 +13,8 @@ Nome, Foto, ID. Experiência, Peso e Altura
 
 Adicionado conteúdo Scrool ao clicar no botão do modal trazendo as habilidades com o XP de cada.
 
+A página está hospedada no domínio da Amazon através do link: http://18.222.147.4:8080/pokemon/index.html
+
+
+
 
