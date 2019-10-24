@@ -63,7 +63,7 @@ function App() {
         <form onSubmit={handleSubmit}>
           <div className="searchBox">
             <input className="input"
-              placeholder="Digite o nome ou número de um Pokémon ..."
+              placeholder="Buscar pokémon ..."
               value={textInput}
               onChange={e => setTextInput(e.target.value)} />
             <button className="btnSearch" type="submit"><img src={iconeSearch} alt='a' /></button>

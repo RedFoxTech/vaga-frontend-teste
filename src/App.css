@@ -39,14 +39,14 @@
 
 .searchBox {
   width: 60%;
-  min-width: 344px;
+  min-width: 284px;
   display: flex;
 }
 
 .input {
   height: 44px;
   width: 100%;
-  min-width: 300px;
+  min-width: 240px;
   padding: 0 20px;
   border-radius: 5px 0px 0px 5px;
   border: none;
@@ -81,6 +81,7 @@
 
 .filterInt { 
   width: 60%;
+  min-width: 284px;
   display: flex;
   justify-content: flex-end;
 }
@@ -96,6 +97,7 @@
 
 .navNextBack {
   width: 60%;
+  min-width: 284px;
   margin: 20px 0;
   display: flex;
   justify-content: space-between;
@@ -122,6 +124,7 @@
   min-height: 200px;
   margin: 15px;
   color: #444;
+  cursor: pointer;
 
   display: flex;
   justify-content: center;
