@@ -62,7 +62,7 @@ function App() {
               placeholder="Digite o nome ou número de um Pokémon ..."
               value={textInput}
               onChange={e => setTextInput(e.target.value)} />
-            <button className="btn" type="submit"><img src={iconeSearch} alt='a' /></button>
+            <button className="btnSearch" type="submit"><img src={iconeSearch} alt='a' /></button>
           </div>
         </form>
         <div className="filterArea">
@@ -74,8 +74,8 @@ function App() {
       </section>
       <div className="sectionCards">
         <nav className="navNextBack">
-          <button className="btnNext" onClick={() => backPage()}>Anterior</button>
-          <button className="btnNext" onClick={() => nextPage()}>Próxima</button>
+          <button className="btn btn-primary" disabled={indexPage === 0} onClick={() => backPage()}>Anterior</button>
+          <button className="btn btn-primary" disabled={indexPage === 945} onClick={() => nextPage()}>Próxima</button>
         </nav>
 
         <div className="sectionCardsInt">

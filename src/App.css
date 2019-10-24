@@ -53,20 +53,21 @@
   border-right: 1px solid #ccc;
 }
 
-.btn img {
+.btnSearch img {
   width: 60%;
 }
 
-.btn {
+.btnSearch {
   min-height: 44px;
   min-width: 44px;
+  border:none;
   border-radius: 0 5px 5px 0px;
   
   padding: 5px;
   background: #FFF;
 }
 
-.btn:hover {
+.btnSearch:hover {
   background: rgba(201, 68, 68, 0.973);
 }
 
