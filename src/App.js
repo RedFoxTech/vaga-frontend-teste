@@ -46,10 +46,14 @@ function App() {
 
   function nextPage() {
     setIndexPage(indexPage + 18)
+    setPokemon('')
+    setTextInput('')
   }
 
   function backPage() {
     setIndexPage(indexPage - 18)
+    setPokemon('')
+    setTextInput('')
   }
 
   return (
