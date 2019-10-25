@@ -14,20 +14,20 @@ function App() {
   const [indexPage, setIndexPage] = useState(0)
 
   useEffect(() => {
-    async function loadPokemon() {
+    async function loadPokemons() {
 
       const response = await api.get(`pokemon/?offset=${indexPage}&limit=18`)
       setPokemons(response.data.results)
     }
 
-    loadPokemon()
+    loadPokemons()
   }, [indexPage])
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     if (!textInput) {
-      await api.get(`pokemon/`)
+      await api.get(`pokemon/?offset=0&limit=18`)
         .then((response) => {
           setPokemons(response.data.results)
           setPokemon('')
@@ -37,6 +37,15 @@ function App() {
     const response = await api.get(`/pokemon/${textInput}/`)
     setPokemons([])
     setPokemon(response.data)
+  }
+
+  async function goToHome() {
+    await api.get(`pokemon/?offset=0&limit=18`)
+      .then((response) => {
+        setPokemons(response.data.results)
+        setPokemon('')
+        setTextInput('')
+      })
   }
 
   function extractNumberUrl(url) {
@@ -58,7 +67,7 @@ function App() {
 
   return (
     <div className="cont">
-      <div className="header"><img src={logo} alt="a" /></div>
+      <div className="header"><img className="logo" onClick={() => goToHome()} src={logo} alt="a" /></div>
       <section className="searchArea">
         <form onSubmit={handleSubmit}>
           <div className="searchBox">
@@ -71,8 +80,13 @@ function App() {
         </form>
         <div className="filterArea">
           <div className="filterInt">
-            <span>Ordenar</span>
-            <span>Ordenar</span>
+            <div className="dropdown">
+              <li className="btn btn-light dropdown-taggle">Teste</li>
+              <li className="btn btn-light">Teste</li>
+              <li className="btn btn-light">Teste</li>
+              <li className="btn btn-light">Teste</li>
+              <li className="btn btn-light">Teste</li>
+            </div>
           </div>
         </div>
       </section>
@@ -84,23 +98,39 @@ function App() {
 
         <div className="sectionCardsInt">
           {pokemons ? pokemons.map((e) => (
-            <div className="card" key={e.name}>
+            <div className="card" key={e.name} data-toggle="modal" data-target={`#card${e.name}`}>
               <span>{e.name}</span>
               <img className="imgCard" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${extractNumberUrl(e.url)}.png`} alt='a' />
+
+              <div className="modal fade" id={`card${e.name}`}>
+                <div className="modal-dialog modal-dialog-centered">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5 className="modal-title">{e.name}</h5>
+                      <button className="close" data-dismiss="modal"><span>&times;</span></button>
+                    </div>
+                    <div className="modal-body">
+                      <div className="cardModal" key={e.name}>
+                        <img className="imgCard" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${extractNumberUrl(e.url)}.png`} alt='a' />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           )) : <div></div>
           }
-
-          {pokemon ?
-            <div className="card">
-              <span>{pokemon.name}</span>
-              <img className="imgCard" src={pokemon.sprites.front_default} alt='a' />
-            </div>
-            : <div></div>
+          {
+            pokemon ?
+              <div className="card">
+                < span > {pokemon.name}</span>
+                <img className="imgCard" src={pokemon.sprites.front_default} alt='a' />
+              </div>
+              : <div></div>
           }
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 

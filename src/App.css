@@ -1,9 +1,6 @@
 .cont {
   height: 100vh;
-  /* width: 80%; */
   margin: auto;
-
-  /* background: chartreuse; */
 
   display: flex;
   align-items: center;
@@ -12,13 +9,13 @@
 
 .header { 
   margin: 70px 0;
-  /* background-color: white; */
   display: flex;
   justify-content: center;
 }
 
-.header img {
+.logo {
   width: 70%;
+  cursor: pointer;
 }
 
 .searchArea {
@@ -62,13 +59,12 @@
   min-width: 44px;
   border:none;
   border-radius: 0 5px 5px 0px;
-  
   padding: 5px;
   background: #FFF;
 }
 
 .btnSearch:hover {
-  background: rgba(201, 68, 68, 0.973);
+  background: #ccc;
 }
 
 .filterArea {
@@ -82,6 +78,7 @@
 .filterInt { 
   width: 60%;
   min-width: 284px;
+
   display: flex;
   justify-content: flex-end;
 }
@@ -89,6 +86,7 @@
   width: 100%;
   padding: 15px 0;
   background: #eee;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -99,16 +97,9 @@
   width: 60%;
   min-width: 284px;
   margin: 20px 0;
+  
   display: flex;
   justify-content: space-between;
-}
-
-.btnNext {
-  padding: 5px 15px;
-  background: rgba(201, 68, 68, 0.973);
-  color: #fff;
-  border: none;
-  border-radius: 5px;
 }
 
 .sectionCardsInt {
