@@ -1,0 +1,358 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1523.5 993">
+    <defs>
+        <style>
+            .cls-1{fill:#000;opacity:0.6;}.cls-2{fill:#da000c;}.cls-11,.cls-2,.cls-3{stroke:#000;}.cls-11,.cls-13,.cls-2,.cls-3,.cls-6{stroke-miterlimit:10;}.cls-2,.cls-3{stroke-width:4px;}.cls-3{fill:#bf001b;}.cls-4{opacity:0.85;}.cls-5{fill:#1b55ff;}.cls-11,.cls-13,.cls-6{fill:none;}.cls-13,.cls-6{stroke:#fff;}.cls-6{stroke-width:6px;}.cls-7{mask:url(#mask);}.cls-8{opacity:0.5;}.cls-9{fill:#fff;}.cls-10{fill:#df0600;}.cls-12{mask:url(#mask-2);}.cls-14{mask:url(#mask-3);}.cls-15{opacity:0.59;}.cls-16{opacity:0.64;}.cls-17{fill:#fff724;}.cls-18{mask:url(#mask-17);}.cls-19{fill:#10ec00;}.cls-20{mask:url(#mask-32);}.cls-21{filter:url(#luminosity-noclip-32);}.cls-22{filter:url(#luminosity-noclip-17);}.cls-23{filter:url(#luminosity-noclip-3);}.cls-24{filter:url(#luminosity-noclip-2);}.cls-25{filter:url(#luminosity-noclip);}
+        </style>
+        <filter id="luminosity-noclip" x="19.5" y="29" width="142" height="142" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+            <feFlood flood-color="#fff" result="bg"/>
+            <feBlend in="SourceGraphic" in2="bg"/>
+        </filter>
+        <mask id="mask" x="19.5" y="29" width="142" height="142" maskUnits="userSpaceOnUse">
+            <g class="cls-25">
+                <image width="142" height="142" transform="translate(19.5 29)"
+                       xlink:href="data:image/png;base64,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"/>
+            </g>
+        </mask>
+        <filter id="luminosity-noclip-2" x="154.5" y="38" width="30" height="30" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+            <feFlood flood-color="#fff" result="bg"/>
+            <feBlend in="SourceGraphic" in2="bg"/>
+        </filter>
+        <mask id="mask-2" x="154.5" y="38" width="30" height="30" maskUnits="userSpaceOnUse">
+            <g class="cls-24">
+                <use transform="translate(154.5 38)" xlink:href="#image"/>
+            </g>
+        </mask>
+        <image id="image" width="30" height="30"
+               xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAIAAAC0Ujn1AAAACXBIWXMAAAsSAAALEgHS3X78AAAAPUlEQVRIS+3SMQoAMAgEwfP/nw6klaCBHETYqXULUQIwTmzV1KVIqo2e3H1Wd6VP3b/T8h1E1rR8zwdgvAUUkADB3FxudwAAAABJRU5ErkJggg=="/>
+        <mask id="mask-3" x="154.5" y="38" width="30" height="30" maskUnits="userSpaceOnUse">
+            <g class="cls-23">
+                <use transform="translate(154.5 38)" xlink:href="#image"/>
+            </g>
+        </mask>
+        <filter id="luminosity-noclip-17" x="187.5" y="38" width="30" height="30" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+            <feFlood flood-color="#fff" result="bg"/>
+            <feBlend in="SourceGraphic" in2="bg"/>
+        </filter>
+        <mask id="mask-17" x="187.5" y="38" width="30" height="30" maskUnits="userSpaceOnUse">
+            <g class="cls-22">
+                <use transform="translate(187.5 38)" xlink:href="#image"/>
+            </g>
+        </mask>
+        <filter id="luminosity-noclip-32" x="219.5" y="38" width="30" height="30" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+            <feFlood flood-color="#fff" result="bg"/>
+            <feBlend in="SourceGraphic" in2="bg"/>
+        </filter>
+        <mask id="mask-32" x="219.5" y="38" width="30" height="30" maskUnits="userSpaceOnUse">
+            <g class="cls-21">
+                <use transform="translate(219.5 38)" xlink:href="#image"/>
+            </g>
+        </mask>
+        <image id="image-2" width="56" height="56"
+               xlink:href="data:image/png;base64,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"/>
+    </defs>
+    <title>PokedexOpen</title>
+    <g id="Camada_2" data-name="Camada 2">
+        <g id="Camada_1-2" data-name="Camada 1">
+            <polygon class="cls-1"
+                     points="1.5 867 95.5 993 1523.5 993 1523.5 1000 992.5 175 844.5 195 623.5 164 595.5 109 496.5 2 2.5 2 1.5 867"/>
+            <polygon class="cls-2" points="2.5 2 2.5 175 169.5 175 262 95.5 497.5 96 496.5 2 2.5 2"/>
+            <polygon class="cls-3" points="2 174.5 2 867.5 497 867.5 497 95.5 259 95.5 170 174.5 2 174.5"/>
+            <polygon class="cls-3" points="993 174.5 993 867.5 498 867.5 498 95.5 736 95.5 825 174.5 993 174.5"/>
+            <image class="cls-4" width="142" height="142" transform="translate(19.5 29)"
+                   xlink:href="data:image/png;base64,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"/>
+            <circle class="cls-5" cx="86.5" cy="96" r="53"/>
+            <circle class="cls-6" cx="86.5" cy="96" r="53"/>
+            <g class="cls-7">
+                <g class="cls-8">
+                    <path class="cls-9"
+                          d="M157.5,81.5A37,37,0,0,0,156,77c-.46-1.22-1.08-2.24-1.5-3.5-1-2.9-2.72-5.23-4-8A52.55,52.55,0,0,0,138,49c-9.66-8.6-20.51-12.5-32.5-17h-5V31h-20v1h-5c-13.34,5-28,9.64-37,21.5-2.15,2.82-4.22,5.59-6.5,8.5-1.64,2.1-2.35,5.15-3.5,7.5-1.39,2.85-2.87,5.56-4,8.5-.41,1.05-.72,3-1,4s-.9,3.25-1,4a117.38,117.38,0,0,0-1,16c0,6.09,1.1,10.88,2,16.5A37,37,0,0,0,25,123c.46,1.22,1.08,2.24,1.5,3.5,1,2.9,2.72,5.23,4,8A52.55,52.55,0,0,0,43,151c9.66,8.6,20.51,12.5,32.5,17h5v1h20v-1h5c13.34-5,28-9.64,37-21.5,2.15-2.82,4.22-5.59,6.5-8.5,1.64-2.1,2.35-5.15,3.5-7.5,2.46-5,5.23-10.83,6-16.5a116.08,116.08,0,0,0,1-16C159.5,91.91,158.4,87.13,157.5,81.5Z"/>
+                    <circle class="cls-9" cx="86.5" cy="96" r="53"/>
+                    <circle class="cls-6" cx="86.5" cy="96" r="53"/>
+                </g>
+            </g>
+            <use class="cls-4" transform="translate(145.5 29)" xlink:href="#image-2"/>
+            <circle class="cls-10" cx="169.5" cy="53" r="12"/>
+            <circle class="cls-11" cx="169.5" cy="53" r="12"/>
+            <g class="cls-12">
+                <g class="cls-8">
+                    <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                    <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                </g>
+            </g>
+            <g class="cls-14">
+                <g class="cls-8">
+                    <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                    <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                    <g class="cls-14">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g class="cls-14">
+                <g class="cls-15">
+                    <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                    <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                    <g class="cls-14">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                        </g>
+                    </g>
+                    <g class="cls-14">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                            <g class="cls-14">
+                                <g class="cls-8">
+                                    <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                                    <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g class="cls-14">
+                <g class="cls-16">
+                    <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                    <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                    <g class="cls-14">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                        </g>
+                    </g>
+                    <g class="cls-14">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                            <g class="cls-14">
+                                <g class="cls-8">
+                                    <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                                    <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g class="cls-14">
+                        <g class="cls-15">
+                            <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                            <g class="cls-14">
+                                <g class="cls-8">
+                                    <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                                    <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                                </g>
+                            </g>
+                            <g class="cls-14">
+                                <g class="cls-8">
+                                    <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                                    <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                                    <g class="cls-14">
+                                        <g class="cls-8">
+                                            <circle class="cls-9" cx="169.5" cy="53" r="12"/>
+                                            <circle class="cls-13" cx="169.5" cy="53" r="12"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <use class="cls-4" transform="translate(178.5 29)" xlink:href="#image-2"/>
+            <circle class="cls-17" cx="202.5" cy="53" r="12"/>
+            <circle class="cls-11" cx="202.5" cy="53" r="12"/>
+            <g class="cls-18">
+                <g class="cls-8">
+                    <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                    <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                </g>
+            </g>
+            <g class="cls-18">
+                <g class="cls-8">
+                    <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                    <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                    <g class="cls-18">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g class="cls-18">
+                <g class="cls-15">
+                    <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                    <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                    <g class="cls-18">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                        </g>
+                    </g>
+                    <g class="cls-18">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                            <g class="cls-18">
+                                <g class="cls-8">
+                                    <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                                    <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g class="cls-18">
+                <g class="cls-16">
+                    <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                    <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                    <g class="cls-18">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                        </g>
+                    </g>
+                    <g class="cls-18">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                            <g class="cls-18">
+                                <g class="cls-8">
+                                    <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                                    <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g class="cls-18">
+                        <g class="cls-15">
+                            <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                            <g class="cls-18">
+                                <g class="cls-8">
+                                    <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                                    <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                                </g>
+                            </g>
+                            <g class="cls-18">
+                                <g class="cls-8">
+                                    <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                                    <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                                    <g class="cls-18">
+                                        <g class="cls-8">
+                                            <circle class="cls-9" cx="202.5" cy="53" r="12"/>
+                                            <circle class="cls-13" cx="202.5" cy="53" r="12"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <use class="cls-4" transform="translate(210.5 29)" xlink:href="#image-2"/>
+            <circle class="cls-19" cx="234.5" cy="53" r="12"/>
+            <circle class="cls-11" cx="234.5" cy="53" r="12"/>
+            <g class="cls-20">
+                <g class="cls-8">
+                    <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                    <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                </g>
+            </g>
+            <g class="cls-20">
+                <g class="cls-8">
+                    <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                    <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                    <g class="cls-20">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g class="cls-20">
+                <g class="cls-15">
+                    <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                    <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                    <g class="cls-20">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                        </g>
+                    </g>
+                    <g class="cls-20">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                            <g class="cls-20">
+                                <g class="cls-8">
+                                    <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                                    <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g class="cls-20">
+                <g class="cls-16">
+                    <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                    <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                    <g class="cls-20">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                        </g>
+                    </g>
+                    <g class="cls-20">
+                        <g class="cls-8">
+                            <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                            <g class="cls-20">
+                                <g class="cls-8">
+                                    <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                                    <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g class="cls-20">
+                        <g class="cls-15">
+                            <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                            <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                            <g class="cls-20">
+                                <g class="cls-8">
+                                    <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                                    <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                                </g>
+                            </g>
+                            <g class="cls-20">
+                                <g class="cls-8">
+                                    <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                                    <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                                    <g class="cls-20">
+                                        <g class="cls-8">
+                                            <circle class="cls-9" cx="234.5" cy="53" r="12"/>
+                                            <circle class="cls-13" cx="234.5" cy="53" r="12"/>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
