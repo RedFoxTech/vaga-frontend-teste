@@ -1,14 +1,10 @@
-# pokemon
+# Teste de Desenvolvimento Front End!
 
-> A Vue.js project
-
-## Build Setup
-
-# Entrar na pasta pokemon
+## Entrar na pasta pokemon
 cd pokemon
 
-# Instalar as dependências
+## Instalar as dependências
 npm install
 
-# Rodar no localhost:8080 (default)
+## Rodar no localhost:8080 (default)
 npm start
