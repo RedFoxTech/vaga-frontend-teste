@@ -1,3 +1,14 @@
+*:focus {
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+    outline: none;
+}
+
+button:focus, button:active .btn:focus, .btn:active {
+    outline: none;
+}
+
 .cont {
   height: 100vh;
   margin: auto;
@@ -64,7 +75,7 @@
 }
 
 .btnSearch:hover {
-  background: #ccc;
+  background: #eee;
 }
 
 .filterArea {
@@ -93,11 +104,11 @@
   flex-direction: column;
 }
 
-.navNextBack {
+.nav {
   width: 60%;
   min-width: 284px;
   margin: 20px 0;
-  
+
   display: flex;
   justify-content: space-between;
 }
