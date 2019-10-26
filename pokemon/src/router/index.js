@@ -1,15 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import PokemonCard from '@/components/PokemonCard'
-import BootstrapVue from 'bootstrap-vue'
+import Pokemon from '@/components/Pokemon'
 
 Vue.use(Router)
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'PokemonCard',
-      component: PokemonCard
+      name: 'Pokemon',
+      component: Pokemon
     }
   ]
 })
