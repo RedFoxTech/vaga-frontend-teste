@@ -5,5 +5,5 @@
  os demais arquivo são do projeto com React .... no projeto  com framework vai ter que baixar as depedencias o node_modules e depois npm install e da start
  
  
- QUANDO CLONAR DIVIDIR O PROJETO UM  QUE COMO FALEI E COMPODTO PELA PASTAS JS, INDEX HTML ,CSS, IMG 
+ QUANDO CLONAR DIVIDIR O PROJETO UM  QUE COMO FALEI E COMPOSTO PELA PASTAS JS, INDEX HTML ,CSS, IMG 
  
