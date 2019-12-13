@@ -14,7 +14,7 @@
       <b-row align-h="start" class="ml-4 optionSelect">
         <b-form-select :options="options" v-model="type" class="mb-2 mt-2 w-100" />
       </b-row>
-      <b-list-group horizontal class="ml-5">
+      <b-list-group horizontal class="ml-5 flex-wrap">
         <b-list-group-item
           class="mb-2"
           v-for="(type, index) in selectType"
@@ -252,6 +252,6 @@ export default {
 }
 
 .optionSelect {
-  width: 380px;
+  width: 200px;
 }
 </style>
