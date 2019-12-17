@@ -29,10 +29,10 @@ export default {
     Card
   },
   created () {
-    this.getTypes()
+    this.getPokemons()
   },
   methods: {
-    async getTypes () {
+    async getPokemons () {
       await Api.pokemon().then(res => {
        this.list_pokemons = res.data.results
       }).catch(err => {
