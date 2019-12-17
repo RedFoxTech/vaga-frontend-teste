@@ -3,14 +3,11 @@
     <nav-bar />
     <div class="container">
       <div class="row">
-        <filters />
-      </div>
-      <div class="row">
-        <card />
-        <card />
-        <card />
-        <card />
-        <card />
+        <card
+          :key="index"
+          v-for="(item, index) in list_pokemons"
+          v-bind:namePoke="item.name"
+        />
       </div>
     </div>
   </div>
@@ -19,13 +16,29 @@
 <script>
 import NavBar from './components/Navbar'
 import Card from './components/Card'
-import Filters from './components/Filters'
+import Api from './services/api'
 export default {
   name: 'app',
+  data() {
+    return {
+      list_pokemons: []
+    }
+  },
   components: {
     NavBar,
-    Card,
-    Filters
+    Card
+  },
+  created () {
+    this.getTypes()
+  },
+  methods: {
+    async getTypes () {
+      await Api.pokemon().then(res => {
+       this.list_pokemons = res.data.results
+      }).catch(err => {
+        console.log(err)
+      })
+    }
   }
 }
 </script>
