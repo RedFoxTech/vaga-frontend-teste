@@ -47,9 +47,15 @@ export default {
     this.getPokemonStatus(this.namePoke)
     console.clear()
   },
+  watch: {
+    // sempre que a pergunta mudar, essa função será executada
+    namePoke: function (newName, oldName) {
+      this.getPokemonStatus(newName)
+    }
+  },
   methods: {
     async getPokemonStatus (param) {
-      await Api.pokemonStatus(param).then(res => {
+      await Api.pokemonEspecifico(param).then(res => {
        this.pokeStatus = res.data
        this.getAbility(res.data.abilities)
        this.getStatus(res.data.stats)
@@ -58,7 +64,7 @@ export default {
       }) 
     },
     async getAbility (param) {
-      let index = 0;
+      let index = 0
       for (const item of param) {
         await Api.ability(item.ability.name).then(res => {
           this.abilities.push(res.data.effect_entries)
