@@ -4,7 +4,7 @@
     <div class="row">
       <form @submit.prevent="getPokemon(search.toLowerCase())">
         <div class="input-field col s12 m6 l6">
-          <input v-model="search" placeholder="Buscar pokemon" type="text">
+          <input v-model="search" placeholder="Digite o nome do pokemon que procura" type="text">
         </div>
       </form>
     </div>
@@ -35,15 +35,21 @@
     </div>
     <div v-if="rmv" class="row">
       <div class="col">
-        <button class="btn btn-small red lighten-1" @click="limparFiltros">Remover filtros</button>
+        <button class="btn btn-small red lighten-1" @click="destroySelect">Remover filtros</button>
       </div>
     </div> 
-    <div class="row" id="paginate">
+    <div class="row" id="paginate" 
+      v-bind:style="!showPaginate.bool ? {'justify-content': 'flex-end'} : {'justify-content': 'flex-start'}">
       <div class="col">
         <paginate
-          :getAllPokemons="getAllPokemons"
+          :getAnyPokemon="getAllPokemons"
           :paginate="paginate"
+          v-if="!showPaginate.bool"
         />
+        <div v-else>
+          <h5>Páginação não disponivel.</h5>
+          <h6>Listando {{showPaginate.count}} items</h6>
+        </div>
       </div>
     </div> 
   </div>
@@ -61,7 +67,8 @@ export default {
     orderByAlpha: Function,
     limparFiltros: Function,
     paginate: Object,
-    rmv: Boolean
+    rmv: Boolean,
+    showPaginate: Boolean
   },
   components: {
     Paginate
@@ -70,6 +77,7 @@ export default {
     return {
       search: '',
       options_select: [],
+      instances: null,
       selectType: {
         normal: "normal",
         fighting: "fighting",
@@ -99,7 +107,18 @@ export default {
   methods: {
     initSelect () {
       var elems = document.querySelector('select')
-      var instances = M.FormSelect.init(elems)
+      this.instances = M.FormSelect.init(elems)
+    },
+    destroySelect () {
+      this.instances.$el[0].childNodes.forEach(element => {
+        if(element.selected === true) {
+          element.selected = false
+        }
+      })
+      this.search = ''
+      this.instances.destroy()
+      this.initSelect()
+      this.limparFiltros()
     }
   }
 }

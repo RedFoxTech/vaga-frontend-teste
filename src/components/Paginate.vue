@@ -1,13 +1,13 @@
 <template>
   <div>
     <button
-      @click="getAllPokemons(paginate.prev)"
+      @click="getAnyPokemon(paginate.prev)"
       :disabled="paginate.prev == null"
       class="btn btn-small">
       Voltar
     </button>
     <button
-      @click="getAllPokemons(paginate.next)"
+      @click="getAnyPokemon(paginate.next)"
       :disabled="paginate.next == null"
       class="btn btn-small">
       Avançar
@@ -19,7 +19,7 @@
 export default {
   name: 'paginate',
   props: {
-    getAllPokemons: Function,
+    getAnyPokemon: Function,
     paginate: Object
   }
 }
