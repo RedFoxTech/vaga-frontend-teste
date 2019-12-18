@@ -2,6 +2,15 @@
   <div id="app">
     <nav-bar />
     <div class="container">
+      <filtros 
+        :getAllPokemons="getAllPokemons"
+        :getPokemon="getPokemon"
+        :getPokemonByType="getPokemonsByType"
+        :orderByAlpha="orderByAlpha"
+        :limparFiltros="limparFiltros"
+        :paginate="paginate"
+        :rmv="rmv"
+      />
       <div class="row">
         <card
           :key="index"
@@ -16,6 +25,7 @@
 <script>
 import NavBar from './components/Navbar'
 import Card from './components/Card'
+import Filtros from './components/Filtros'
 import Api from './services/api'
 export default {
   name: 'app',
