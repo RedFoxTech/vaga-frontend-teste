@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <spinner />
     <nav-bar />
     <div class="container">
       <filtros 
@@ -8,14 +9,15 @@
         :getPokemonByType="getPokemonsByType"
         :orderByAlpha="orderByAlpha"
         :limparFiltros="limparFiltros"
-        :paginate="paginate"
+        :paginate="paginateDefault"
         :rmv="rmv"
+        :showPaginate="showPaginate"
       />
       <div class="row">        
         <card
           :key="index"
           v-for="(item, index) in list_pokemons"
-          v-bind:namePoke="item.name"
+          :namePoke="item.name"
         />
       </div>
     </div>
@@ -26,6 +28,7 @@
 import NavBar from './components/Navbar'
 import Card from './components/Card'
 import Filtros from './components/Filtros'
+import Spinner from './components/Spinner'
 import Api from './services/api'
 import { _ } from 'vue-underscore'
 export default {
@@ -34,33 +37,41 @@ export default {
     return {
       list_pokemons: [],
       types: [],
-      paginate: {
+      paginateDefault: {
         next: '',
-        prev: ''
+        prev: '',
+        total_pages: 0,
       },
+      showPaginate: {
+        bool: false,
+        count: null
+      },
+      visible: false,
       rmv: false
     }
   },
   components: {
     NavBar,
     Card,
-    Filtros
+    Filtros,
+    Spinner
   },
   created () {
     this.getAllPokemons()
   },
   mounted () {
     this.getTypes()
+    this.$root.$emit('Spinner::show')
   },
   methods: {
     async getAllPokemons (page) {
-      let now = new Date()
       await Api.pokemon(page).then(res => {
-        console.log("Carregando...",now.getTime())
         this.list_pokemons = res.data.results
-        this.paginate.next = res.data.next
-        this.paginate.prev = res.data.previous
-        this.paginates()
+        this.paginateDefault = {
+          next: res.data.next,
+          prev: res.data.previous
+        }
+        this.paginatorDefault()
         if (this.rmv) { // if serve para manter ordenação nas next pages
           this.list_pokemons = this.orderByAlpha()
         } else {
@@ -69,7 +80,11 @@ export default {
       }).catch(err => {
         console.log(err)
       }).finally(f => {
-        console.log("Terminou", now.getTime())
+        let time = 0
+        setTimeout(() => {
+          clearTimeout(time)
+          this.$root.$emit('Spinner::hide')
+        }, 1500);
       })
     },
     async getPokemon(search) {
@@ -87,35 +102,47 @@ export default {
     async getPokemonsByType (names) {
       this.rmv = true
       this.list_pokemons = []
+      let time = 0
+      this.$root.$emit('Spinner::show')
       for (const item of names) {
         await Api.pokemonByType(item).then(res => {
           for (const item2 of res.data.pokemon) {
             this.list_pokemons.push(item2.pokemon)
           }
+          this.showPaginate = {
+            bool: true,
+            count: this.list_pokemons.length
+          }
         }).catch(err => {
           console.log(err)
+        }).finally(f => {
+          setTimeout(() => {
+            clearTimeout(time)
+            this.$root.$emit('Spinner::hide')
+          }, 2500);
         })
       }
     },
-    limparFiltros () {      
+    limparFiltros () {
       this.rmv = false
+      this.showPaginate = false
       this.getAllPokemons()
     },
-    paginates () {
+    paginatorDefault () {
       let next = '', prev = null
-      if (this.paginate.next !== null ) {
-        next = this.paginate.next
+      if (this.paginateDefault.next !== null ) {
+        next = this.paginateDefault.next
         next = next.split("=")
         next = next[1].split("&")
-        this.paginate.next = next[0]
+        this.paginateDefault.next = next[0]
       } 
-      if (this.paginate.prev !== null) {
-        prev = this.paginate.prev
+      if (this.paginateDefault.prev !== null) {
+        prev = this.paginateDefault.prev
         prev = prev.split("=")
         prev = prev[1].split("&")
-        this.paginate.prev = prev[0]
+        this.paginateDefault.prev = prev[0]
       }
-      return this.paginate
+      return this.paginateDefault
     },
     orderByAlpha () {
       this.rmv = true
