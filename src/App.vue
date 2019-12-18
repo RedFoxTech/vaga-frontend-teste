@@ -27,11 +27,18 @@ import NavBar from './components/Navbar'
 import Card from './components/Card'
 import Filtros from './components/Filtros'
 import Api from './services/api'
+import { _ } from 'vue-underscore'
 export default {
   name: 'app',
   data() {
     return {
-      list_pokemons: []
+      list_pokemons: [],
+      types: [],
+      paginate: {
+        next: '',
+        prev: ''
+      },
+      rmv: false
     }
   },
   components: {
