@@ -11,7 +11,7 @@
         :paginate="paginate"
         :rmv="rmv"
       />
-      <div class="row">
+      <div class="row">        
         <card
           :key="index"
           v-for="(item, index) in list_pokemons"
@@ -43,10 +43,14 @@ export default {
   },
   components: {
     NavBar,
-    Card
+    Card,
+    Filtros
   },
   created () {
-    this.getPokemons()
+    this.getAllPokemons()
+  },
+  mounted () {
+    this.getTypes()
   },
   methods: {
     async getAllPokemons (page) {
@@ -61,8 +65,11 @@ export default {
           this.list_pokemons = this.orderByAlpha()
         } else {
           this.list_pokemons = res.data.results
+        }
       }).catch(err => {
         console.log(err)
+      }).finally(f => {
+        console.log("Terminou", now.getTime())
       })
     },
     async getPokemon(search) {
@@ -74,7 +81,7 @@ export default {
           alert("Pokemon digitado não existe, entre com um válido.")
         } else {
           alert("Erro! Tente mais tarde, caso o erro persista entre em contato com administrador.")
-    }
+        }
       })
     },
     async getPokemonsByType (names) {
@@ -84,7 +91,7 @@ export default {
         await Api.pokemonByType(item).then(res => {
           for (const item2 of res.data.pokemon) {
             this.list_pokemons.push(item2.pokemon)
-  }
+          }
         }).catch(err => {
           console.log(err)
         })
@@ -114,8 +121,9 @@ export default {
       this.rmv = true
       return this.list_pokemons = _.sortBy(this.list_pokemons, 'name')
     }
+  }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>
