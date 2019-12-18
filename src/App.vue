@@ -49,9 +49,18 @@ export default {
     this.getPokemons()
   },
   methods: {
-    async getPokemons () {
-      await Api.pokemon().then(res => {
-       this.list_pokemons = res.data.results
+    async getAllPokemons (page) {
+      let now = new Date()
+      await Api.pokemon(page).then(res => {
+        console.log("Carregando...",now.getTime())
+        this.list_pokemons = res.data.results
+        this.paginate.next = res.data.next
+        this.paginate.prev = res.data.previous
+        this.paginates()
+        if (this.rmv) { // if serve para manter ordenação nas next pages
+          this.list_pokemons = this.orderByAlpha()
+        } else {
+          this.list_pokemons = res.data.results
       }).catch(err => {
         console.log(err)
       })
