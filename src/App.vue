@@ -55,8 +55,56 @@ export default {
       }).catch(err => {
         console.log(err)
       })
+    },
+    async getPokemon(search) {
+      await Api.pokemonEspecifico(search).then(res => {
+       this.rmv = true
+       this.list_pokemons = res.data
+      }).catch(err => {
+        if (err.message === 'Request failed with status code 404') {
+          alert("Pokemon digitado não existe, entre com um válido.")
+        } else {
+          alert("Erro! Tente mais tarde, caso o erro persista entre em contato com administrador.")
     }
+      })
+    },
+    async getPokemonsByType (names) {
+      this.rmv = true
+      this.list_pokemons = []
+      for (const item of names) {
+        await Api.pokemonByType(item).then(res => {
+          for (const item2 of res.data.pokemon) {
+            this.list_pokemons.push(item2.pokemon)
   }
+        }).catch(err => {
+          console.log(err)
+        })
+      }
+    },
+    limparFiltros () {      
+      this.rmv = false
+      this.getAllPokemons()
+    },
+    paginates () {
+      let next = '', prev = null
+      if (this.paginate.next !== null ) {
+        next = this.paginate.next
+        next = next.split("=")
+        next = next[1].split("&")
+        this.paginate.next = next[0]
+      } 
+      if (this.paginate.prev !== null) {
+        prev = this.paginate.prev
+        prev = prev.split("=")
+        prev = prev[1].split("&")
+        this.paginate.prev = prev[0]
+      }
+      return this.paginate
+    },
+    orderByAlpha () {
+      this.rmv = true
+      return this.list_pokemons = _.sortBy(this.list_pokemons, 'name')
+    }
 }
 </script>
 
