@@ -5,7 +5,7 @@
  os demais arquivo são do SEGUNDO PROJETO com React .... no projeto  com framework vai ter que baixar as depedencias o node_modules e depois npm install e da start
  
  
- QUANDO CLONAR DIVIDIR O PROJETO UM  QUE COMO FALEI E COMPOSTO PELA PASTAS JS, INDEX HTML ,CSS, IMG 
+ QUANDO CLONAR DIVIDIR O PROJETO em 2  QUE COMO FALEI um e  COMPOSTO PELA PASTAS JS, INDEX HTML ,CSS, IMG e outro pelo framework react js 
  
  
  
