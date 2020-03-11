@@ -1,0 +1,142 @@
+*:focus {
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+    outline: none;
+}
+
+button:focus, button:active .btn:focus, .btn:active {
+    outline: none;
+}
+
+.cont {
+  height: 100vh;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header { 
+  margin: 70px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 70%;
+  cursor: pointer;
+}
+
+.searchArea {
+  width: 100%;
+  padding: 35px 0;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.searchArea form {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.searchBox {
+  width: 60%;
+  min-width: 284px;
+  display: flex;
+}
+
+.input {
+  height: 44px;
+  width: 100%;
+  min-width: 240px;
+  padding: 0 20px;
+  border-radius: 5px 0px 0px 5px;
+  border: none;
+  border-right: 1px solid #ccc;
+}
+
+.btnSearch img {
+  width: 60%;
+}
+
+.btnSearch {
+  min-height: 44px;
+  min-width: 44px;
+  border:none;
+  border-radius: 0 5px 5px 0px;
+  padding: 5px;
+  background: #FFF;
+}
+
+.btnSearch:hover {
+  background: #eee;
+}
+
+.filterArea {
+  width: 100%;
+  margin-top: 15px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.filterInt { 
+  width: 60%;
+  min-width: 284px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+.sectionCards {
+  width: 100%;
+  padding: 15px 0;
+  background: #eee;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.nav {
+  width: 60%;
+  min-width: 284px;
+  margin: 20px 0;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.sectionCardsInt {
+  width: 100%;
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  min-width: 170px;
+  min-height: 200px;
+  margin: 15px;
+  color: #444;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  box-shadow: 0 0 9px -1px #bbb;
+}
+
+.imgCard {
+  width: 65%;
+}
